@@ -94,18 +94,17 @@
 <meta property="og:site_name" content="WK&#39;s Blog">
 <meta property="og:description" content="手动打包、手动上传是一件非常烦琐的事件，通常会浪费开发者大量的时间，这时候自动打包与分发就起到的重要的角色。目的主要要实现以下几个功能：  从git拉取最新代码 根据配置打包ipa 自动分包到pgyer或fir 邮件通知相关人员  本文将一步步实现上述功能：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1212454-682a0b9af82d7eee.png">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1212454-61e6a345d4a73da4.png">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1212454-61e6a345d4a73da4.png">
-<meta property="og:image" content="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124152717237.png">
-<meta property="og:image" content="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124153158039.png">
-<meta property="og:image" content="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124153216719.png">
-<meta property="og:image" content="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124153306761.png">
-<meta property="og:updated_time" content="2019-05-06T08:16:45.284Z">
+<meta property="og:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/1212454-682a0b9af82d7eee.png">
+<meta property="og:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/1212454-61e6a345d4a73da4.png">
+<meta property="og:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/image-20190124152717237.png">
+<meta property="og:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/image-20190124153158039.png">
+<meta property="og:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/image-20190124153216719.png">
+<meta property="og:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/image-20190124153306761.png">
+<meta property="og:updated_time" content="2019-05-06T08:54:27.819Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fastlane + Jenkins 自动化打包部署">
 <meta name="twitter:description" content="手动打包、手动上传是一件非常烦琐的事件，通常会浪费开发者大量的时间，这时候自动打包与分发就起到的重要的角色。目的主要要实现以下几个功能：  从git拉取最新代码 根据配置打包ipa 自动分包到pgyer或fir 邮件通知相关人员  本文将一步步实现上述功能：">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1212454-682a0b9af82d7eee.png">
+<meta name="twitter:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/1212454-682a0b9af82d7eee.png">
 
 
 
@@ -432,16 +431,15 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install jenkins</span><br></pre></td></tr></table></figure>
 <h3 id="启动jenkins"><a href="#启动jenkins" class="headerlink" title="启动jenkins"></a>启动jenkins</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jenkins</span><br></pre></td></tr></table></figure>
 <h3 id="访问jenkins"><a href="#访问jenkins" class="headerlink" title="访问jenkins"></a>访问jenkins</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8080 // 打开jenkins可视化页面`</span><br><span class="line">http://localhost:8080/exit //退出Jenkins`</span><br><span class="line">http://localhost:8080/restart //重启`</span><br><span class="line">http://localhost:8080/reload //重新加载</span><br></pre></td></tr></table></figure>
-<p><img src="https://upload-images.jianshu.io/upload_images/1212454-682a0b9af82d7eee.png" alt="img"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1212454-61e6a345d4a73da4.png" alt="img"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/1212454-61e6a345d4a73da4.png" alt></p>
+<p><img src="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/1212454-682a0b9af82d7eee.png" alt="img"></p>
+<p><img src="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/1212454-61e6a345d4a73da4.png" alt="img"></p>
 <h3 id="新建任务："><a href="#新建任务：" class="headerlink" title="新建任务："></a>新建任务：</h3><p>选择自由风格</p>
-<p><img src="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124152717237.png" alt="image-20190313154900386"></p>
+<p><img src="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/image-20190124152717237.png" alt></p>
 <p>如果构建代码是通过git获取，需要先设置git 密码或者SSH,</p>
 <p><strong>Source code</strong> &gt; git</p>
-<p><img src="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124153158039.png" alt="image-20190313154923125"></p>
-<p><img src="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124153216719.png" alt="image-20190313154940416"></p>
-<p><img src="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124153306761.png" alt="image-20190313155007480"></p>
+<p><img src="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/image-20190124153158039.png" alt></p>
+<p><img src="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/image-20190124153216719.png" alt></p>
+<p><img src="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/image-20190124153306761.png" alt="image-20190313155007480"></p>
 <p><strong>Build</strong> &gt; 执行shell</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">IPANAME=&quot;OnstreetSaaS&quot;</span><br><span class="line">OUTPUTDIC=&quot;./fastlane/ipaFile&quot;</span><br><span class="line">PGYUKEY=&quot;*****&quot;</span><br><span class="line">PGYAPPKEY=&quot;*****&quot;</span><br><span class="line">cd ./$&#123;IPANAME&#125;</span><br><span class="line">fastlane gym --export_method development --scheme $&#123;IPANAME&#125; --output_directory $&#123;OUTPUTDIC&#125; --include_bitcode false --include_symbols false --clean true</span><br><span class="line">curl -F &quot;file=@$&#123;OUTPUTDIC&#125;/$&#123;IPANAME&#125;.ipa&quot; -F &quot;uKey=$&#123;PGYUKEY&#125;&quot; -F &quot;_api_key=$&#123;PGYAPPKEY&#125;&quot; https://qiniu-storage.pgyer.com/apiv1/app/upload</span><br></pre></td></tr></table></figure>
 <h3 id="关于邮件通知："><a href="#关于邮件通知：" class="headerlink" title="关于邮件通知："></a>关于邮件通知：</h3><p>可以自己在jenkins 系统设置 配置smtp邮件发送，在<strong>Post-build Actions</strong>&gt; 增加邮件发送</p>
@@ -485,6 +483,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/06/Cocoapods-私有仓库/" rel="prev" title="Cocoapods 私有仓库">
+                Cocoapods 私有仓库 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -580,7 +582,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
