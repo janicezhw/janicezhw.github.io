@@ -1,0 +1,930 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="手动打包、手动上传是一件非常烦琐的事件，通常会浪费开发者大量的时间，这时候自动打包与分发就起到的重要的角色。目的主要要实现以下几个功能：  从git拉取最新代码 根据配置打包ipa 自动分包到pgyer或fir 邮件通知相关人员  本文将一步步实现上述功能：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fastlane + Jenkins 自动化打包部署">
+<meta property="og:url" content="https://janicezhw.github.io/2019/05/06/Fastlane-Jenkins-自动化打包部署/index.html">
+<meta property="og:site_name" content="WK&#39;s Blog">
+<meta property="og:description" content="手动打包、手动上传是一件非常烦琐的事件，通常会浪费开发者大量的时间，这时候自动打包与分发就起到的重要的角色。目的主要要实现以下几个功能：  从git拉取最新代码 根据配置打包ipa 自动分包到pgyer或fir 邮件通知相关人员  本文将一步步实现上述功能：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1212454-682a0b9af82d7eee.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1212454-61e6a345d4a73da4.png">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/1212454-61e6a345d4a73da4.png">
+<meta property="og:image" content="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124152717237.png">
+<meta property="og:image" content="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124153158039.png">
+<meta property="og:image" content="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124153216719.png">
+<meta property="og:image" content="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124153306761.png">
+<meta property="og:updated_time" content="2019-05-06T08:16:45.284Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fastlane + Jenkins 自动化打包部署">
+<meta name="twitter:description" content="手动打包、手动上传是一件非常烦琐的事件，通常会浪费开发者大量的时间，这时候自动打包与分发就起到的重要的角色。目的主要要实现以下几个功能：  从git拉取最新代码 根据配置打包ipa 自动分包到pgyer或fir 邮件通知相关人员  本文将一步步实现上述功能：">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/1212454-682a0b9af82d7eee.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"简书":"http://www.jianshu.com/"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://janicezhw.github.io/2019/05/06/Fastlane-Jenkins-自动化打包部署/">
+
+
+
+
+
+  <title> Fastlane + Jenkins 自动化打包部署 | WK's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?3ff423a8a109f2f6a0b984b3acd66abb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WK's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-gitbook">
+          <a href="/gitbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            GitBook
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://janicezhw.github.io/2019/05/06/Fastlane-Jenkins-自动化打包部署/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WK">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/janicezhw/files/master/hdImg_5ca63b5549b81c325ad24cf346c2e87c14882643418.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WK's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Fastlane + Jenkins 自动化打包部署
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-06T15:59:18+08:00">
+                2019-05-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/06/Fastlane-Jenkins-自动化打包部署/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/05/06/Fastlane-Jenkins-自动化打包部署/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/05/06/Fastlane-Jenkins-自动化打包部署/" class="leancloud_visitors" data-flag-title="Fastlane + Jenkins 自动化打包部署">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>手动打包、手动上传是一件非常烦琐的事件，通常会浪费开发者大量的时间，这时候自动打包与分发就起到的重要的角色。目的主要要实现以下几个功能：</p>
+<ol>
+<li>从git拉取最新代码</li>
+<li>根据配置打包ipa</li>
+<li>自动分包到pgyer或fir</li>
+<li>邮件通知相关人员</li>
+</ol>
+<p>本文将一步步实现上述功能：</p>
+<a id="more"></a>
+<h2 id="安装Fastlane"><a href="#安装Fastlane" class="headerlink" title="安装Fastlane"></a>安装Fastlane</h2><p>需要Ruby2.0+ 环境，Mac系统细带Ruby环境，但是涉及很多权限问题，建议另外rvm来管理ruby</p>
+<h3 id="安装RVM-amp-Ruby"><a href="#安装RVM-amp-Ruby" class="headerlink" title="安装RVM &amp; Ruby"></a>安装RVM &amp; Ruby</h3><p>Install RVM stable with ruby:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\curl -sSL https://get.rvm.io | bash -s stable --ruby</span><br></pre></td></tr></table></figure>
+<p>等待一段时间后就可以成功安装好 RVM。</p>
+<p>然后，重新打开 Termal ，会自动重新载入rvm环境，如果没有执行以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc  </span><br><span class="line">source ~/.bash_profile</span><br></pre></td></tr></table></figure>
+<p><code>rvm -v  ruby -v</code>  查看是否安装正确</p>
+<p><code>rvm list</code>  查看已经安装的ruby版本 </p>
+<p>切换ruby</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm use 2.3.1</span><br></pre></td></tr></table></figure>
+<p>设置rvm默认版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm --default 2.3.1</span><br></pre></td></tr></table></figure>
+<h3 id="安装fastlane"><a href="#安装fastlane" class="headerlink" title="安装fastlane"></a>安装fastlane</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install fastlane -NV</span><br></pre></td></tr></table></figure>
+<h3 id="工程配置fastlane"><a href="#工程配置fastlane" class="headerlink" title="工程配置fastlane"></a>工程配置fastlane</h3><p>bundler是gem包管理工具，建议通过gemfile管理gem包</p>
+<h4 id="进入工程目录，创建Gemfile"><a href="#进入工程目录，创建Gemfile" class="headerlink" title="进入工程目录，创建Gemfile"></a>进入工程目录，创建Gemfile</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">source &quot;https://gems.ruby-china.com/&quot;</span><br><span class="line"> </span><br><span class="line">gem &quot;fastlane&quot;</span><br><span class="line">gem &quot;cocoapods&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bundle install --path vendor/bundler</span><br></pre></td></tr></table></figure>
+<p><code>--path vendor/bundler</code> 表示我們希望把程式安裝在當前的目錄底下，而不是安裝到系統檔案夾如 /usr<em>local</em>bin 或 <em>usr</em>bin 裡面，這樣你的 project 就不會跟你的系統有任何掛勾了。</p>
+<p>会在工程目录下生成vendor目录，管理gem包</p>
+<p><em>請記得將 vendor 這個資料夾加入 .gitignore 之中。</em></p>
+<h4 id="初始化一個-fastlane"><a href="#初始化一個-fastlane" class="headerlink" title="初始化一個 fastlane"></a>初始化一個 fastlane</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bundler exec fastlane init</span><br></pre></td></tr></table></figure>
+<p>\1. 📸  Automate screenshots</p>
+<p>\2. 👩‍✈️  Automate beta distribution to TestFlight</p>
+<p>\3. 🚀  Automate App Store distribution</p>
+<p>\4. 🛠  Manual setup - manually setup your project to automate your tasks</p>
+<p>选择4 自定义</p>
+<h5 id="通过fastlane打包并上传pgyer"><a href="#通过fastlane打包并上传pgyer" class="headerlink" title="通过fastlane打包并上传pgyer"></a>通过fastlane打包并上传pgyer</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastlane add_plugin fir/pgyer</span><br></pre></td></tr></table></figure>
+<p>编辑fastlane文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">default_platform(:ios)</span><br><span class="line">platform :ios do</span><br><span class="line">  desc &quot;Description of what the lane does&quot;</span><br><span class="line">  lane :keji do</span><br><span class="line">    build_app(workspace:&quot;MyApp.xcworkspace&quot;,</span><br><span class="line">          scheme:&quot;MyApp&quot;,</span><br><span class="line">          export_method:&quot;development&quot;,</span><br><span class="line">          output_directory:&quot;./fastlane/ipadFile&quot;,</span><br><span class="line">          configuration:&quot;Debug&quot;)</span><br><span class="line">    pgyer(api_key: &quot;7f15xxxxxxxxxxxxxxxxxx141&quot;, user_key: &quot;4a5bcxxxxxxxxxxxxxxx3a9e&quot;, update_description: &quot;update by fastlane&quot;)</span><br><span class="line">  end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>执行打包任务：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastlane keji</span><br></pre></td></tr></table></figure>
+<h5 id="通过jenkins做上传pgyer的步骤："><a href="#通过jenkins做上传pgyer的步骤：" class="headerlink" title="通过jenkins做上传pgyer的步骤："></a>通过jenkins做上传pgyer的步骤：</h5><p>fastlane不用安装pgyer插件</p>
+<p>推荐通过gym 做fastlane打包（命令更灵活）相关的fastfile：</p>
+<p>fastlane gym -h 查看支持的命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">default_platform(:ios)</span><br><span class="line"></span><br><span class="line">platform :ios do</span><br><span class="line">  desc &quot;Description of what the lane does&quot;</span><br><span class="line">  lane :dev do</span><br><span class="line"> 	 # 打包，具体参数可fastlane gym -h查看</span><br><span class="line">     gym(</span><br><span class="line">     	# clean: true,</span><br><span class="line">     	workspace: &quot;OnstreetSaaS.xcworkspace&quot;,</span><br><span class="line">     	# scheme: &quot;OnstreetSaaS&quot;,</span><br><span class="line">     	# configuration: &quot;Debug&quot;,</span><br><span class="line">     	# output_directory: &quot;./fastlane/ipaFile&quot;,</span><br><span class="line">     	output_name: &quot;OnstreetSaaS&quot;,</span><br><span class="line">     	# export_method:&quot;development&quot;, #app-store、ad-hoc、development、enterprise</span><br><span class="line">     	# include_bitcode: false</span><br><span class="line">     	)</span><br><span class="line">  end</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<p>fastlane gym 打包命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastlane gym (--export_method development --scheme $&#123;IPANAME&#125; --output_directory $&#123;OUTPUTDIC&#125; --include_bitcode false --include_symbols false --clean true)</span><br></pre></td></tr></table></figure>
+<p>关于gym命令：fastlane gym 中可以—增加参数都可以生效，但是在fastfile中 设置参数有些无效，不知道是不是姿势错误…</p>
+<p>关于Ad-hoc 需要configuration设置为release: –export_method ad-hoc –configuration Release  ,</p>
+<h2 id="安装Jenkins"><a href="#安装Jenkins" class="headerlink" title="安装Jenkins"></a>安装Jenkins</h2><h3 id="安装jenkins"><a href="#安装jenkins" class="headerlink" title="安装jenkins"></a>安装jenkins</h3><p>推荐通过homebrew安装jenkins （或者通过war包安装 注意需要jdk 8，<a href="https://www.pgyer.com/doc/view/jenkins_ios" target="_blank" rel="noopener">参考</a>）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install jenkins</span><br></pre></td></tr></table></figure>
+<h3 id="启动jenkins"><a href="#启动jenkins" class="headerlink" title="启动jenkins"></a>启动jenkins</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jenkins</span><br></pre></td></tr></table></figure>
+<h3 id="访问jenkins"><a href="#访问jenkins" class="headerlink" title="访问jenkins"></a>访问jenkins</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8080 // 打开jenkins可视化页面`</span><br><span class="line">http://localhost:8080/exit //退出Jenkins`</span><br><span class="line">http://localhost:8080/restart //重启`</span><br><span class="line">http://localhost:8080/reload //重新加载</span><br></pre></td></tr></table></figure>
+<p><img src="https://upload-images.jianshu.io/upload_images/1212454-682a0b9af82d7eee.png" alt="img"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1212454-61e6a345d4a73da4.png" alt="img"></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/1212454-61e6a345d4a73da4.png" alt></p>
+<h3 id="新建任务："><a href="#新建任务：" class="headerlink" title="新建任务："></a>新建任务：</h3><p>选择自由风格</p>
+<p><img src="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124152717237.png" alt="image-20190313154900386"></p>
+<p>如果构建代码是通过git获取，需要先设置git 密码或者SSH,</p>
+<p><strong>Source code</strong> &gt; git</p>
+<p><img src="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124153158039.png" alt="image-20190313154923125"></p>
+<p><img src="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124153216719.png" alt="image-20190313154940416"></p>
+<p><img src="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/Fastlane_Jenkins_images/image-20190124153306761.png" alt="image-20190313155007480"></p>
+<p><strong>Build</strong> &gt; 执行shell</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">IPANAME=&quot;OnstreetSaaS&quot;</span><br><span class="line">OUTPUTDIC=&quot;./fastlane/ipaFile&quot;</span><br><span class="line">PGYUKEY=&quot;*****&quot;</span><br><span class="line">PGYAPPKEY=&quot;*****&quot;</span><br><span class="line">cd ./$&#123;IPANAME&#125;</span><br><span class="line">fastlane gym --export_method development --scheme $&#123;IPANAME&#125; --output_directory $&#123;OUTPUTDIC&#125; --include_bitcode false --include_symbols false --clean true</span><br><span class="line">curl -F &quot;file=@$&#123;OUTPUTDIC&#125;/$&#123;IPANAME&#125;.ipa&quot; -F &quot;uKey=$&#123;PGYUKEY&#125;&quot; -F &quot;_api_key=$&#123;PGYAPPKEY&#125;&quot; https://qiniu-storage.pgyer.com/apiv1/app/upload</span><br></pre></td></tr></table></figure>
+<h3 id="关于邮件通知："><a href="#关于邮件通知：" class="headerlink" title="关于邮件通知："></a>关于邮件通知：</h3><p>可以自己在jenkins 系统设置 配置smtp邮件发送，在<strong>Post-build Actions</strong>&gt; 增加邮件发送</p>
+<p>但是由于我们用pgyer，直接用pgyer的邮件服务就可以。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/06/DOClever线下部署/" rel="next" title="DOClever线下部署">
+                <i class="fa fa-chevron-left"></i> DOClever线下部署
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2019/05/06/Fastlane-Jenkins-自动化打包部署/" data-title="Fastlane + Jenkins 自动化打包部署" data-url="https://janicezhw.github.io/2019/05/06/Fastlane-Jenkins-自动化打包部署/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/janicezhw/files/master/hdImg_5ca63b5549b81c325ad24cf346c2e87c14882643418.jpg" alt="WK">
+          <p class="site-author-name" itemprop="name">WK</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/janicezhw" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Fastlane"><span class="nav-number">1.</span> <span class="nav-text">安装Fastlane</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装RVM-amp-Ruby"><span class="nav-number">1.1.</span> <span class="nav-text">安装RVM &amp; Ruby</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装fastlane"><span class="nav-number">1.2.</span> <span class="nav-text">安装fastlane</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工程配置fastlane"><span class="nav-number">1.3.</span> <span class="nav-text">工程配置fastlane</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#进入工程目录，创建Gemfile"><span class="nav-number">1.3.1.</span> <span class="nav-text">进入工程目录，创建Gemfile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化一個-fastlane"><span class="nav-number">1.3.2.</span> <span class="nav-text">初始化一個 fastlane</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#通过fastlane打包并上传pgyer"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">通过fastlane打包并上传pgyer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通过jenkins做上传pgyer的步骤："><span class="nav-number">1.3.2.2.</span> <span class="nav-text">通过jenkins做上传pgyer的步骤：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Jenkins"><span class="nav-number">2.</span> <span class="nav-text">安装Jenkins</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装jenkins"><span class="nav-number">2.1.</span> <span class="nav-text">安装jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动jenkins"><span class="nav-number">2.2.</span> <span class="nav-text">启动jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问jenkins"><span class="nav-number">2.3.</span> <span class="nav-text">访问jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新建任务："><span class="nav-number">2.4.</span> <span class="nav-text">新建任务：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于邮件通知："><span class="nav-number">2.5.</span> <span class="nav-text">关于邮件通知：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WK</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"janicezhw"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Gq9VEYljjI1AdBSlrVaXagI5-gzGzoHsz", "ozyf9hlQxFmlqfbGo4utAzS3");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

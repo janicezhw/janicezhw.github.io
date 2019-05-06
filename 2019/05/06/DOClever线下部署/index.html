@@ -87,13 +87,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="WK&#39;s Blog">
-<meta property="og:url" content="https://janicezhw.github.io/index.html">
+<meta name="description" content="线下部署源码下载及安装步骤  https://github.com/sx1989827/DOClever">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DOClever线下部署">
+<meta property="og:url" content="https://janicezhw.github.io/2019/05/06/DOClever线下部署/index.html">
 <meta property="og:site_name" content="WK&#39;s Blog">
+<meta property="og:description" content="线下部署源码下载及安装步骤  https://github.com/sx1989827/DOClever">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-06T08:02:27.414Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WK&#39;s Blog">
+<meta name="twitter:title" content="DOClever线下部署">
+<meta name="twitter:description" content="线下部署源码下载及安装步骤  https://github.com/sx1989827/DOClever">
 
 
 
@@ -121,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://janicezhw.github.io/">
+  <link rel="canonical" href="https://janicezhw.github.io/2019/05/06/DOClever线下部署/">
 
 
 
 
 
-  <title> WK's Blog </title>
+  <title> DOClever线下部署 | WK's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -162,9 +166,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -267,159 +269,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://janicezhw.github.io/2019/05/06/Fastlane-Jenkins-自动化打包部署/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WK">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/janicezhw/files/master/hdImg_5ca63b5549b81c325ad24cf346c2e87c14882643418.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WK's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2019/05/06/Fastlane-Jenkins-自动化打包部署/" itemprop="url">
-                  Fastlane + Jenkins 自动化打包部署
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-06T15:59:18+08:00">
-                2019-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/05/06/Fastlane-Jenkins-自动化打包部署/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/05/06/Fastlane-Jenkins-自动化打包部署/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2019/05/06/Fastlane-Jenkins-自动化打包部署/" class="leancloud_visitors" data-flag-title="Fastlane + Jenkins 自动化打包部署">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>手动打包、手动上传是一件非常烦琐的事件，通常会浪费开发者大量的时间，这时候自动打包与分发就起到的重要的角色。目的主要要实现以下几个功能：</p>
-<ol>
-<li>从git拉取最新代码</li>
-<li>根据配置打包ipa</li>
-<li>自动分包到pgyer或fir</li>
-<li>邮件通知相关人员</li>
-</ol>
-<p>本文将一步步实现上述功能：</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/05/06/Fastlane-Jenkins-自动化打包部署/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
 
   
 
@@ -449,10 +301,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2019/05/06/DOClever线下部署/" itemprop="url">
-                  DOClever线下部署
-                </a>
+                DOClever线下部署
               
             
           </h1>
@@ -524,358 +373,108 @@
       
 
       
-        
-          <blockquote>
+        <blockquote>
 <p>线下部署源码下载及安装步骤  <a href="https://github.com/sx1989827/DOClever" target="_blank" rel="noopener">https://github.com/sx1989827/DOClever</a></p>
 </blockquote>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/05/06/DOClever线下部署/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+<a id="more"></a> 
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="Node-js-安装："><a href="#Node-js-安装：" class="headerlink" title="Node.js 安装："></a>Node.js 安装：</h3><p><a href="https://nodejs.org/en/" target="_blank" rel="noopener">https://nodejs.org/en/</a>  MacOS下载 pkg包安装（注意安装推荐版本，当前DOClever需要8.11.1 node环境，否则无法正常安装<a href="https://nodejs.org/dist/v8.11.1/" target="_blank" rel="noopener">https://nodejs.org/dist/v8.11.1/</a>  ）</p>
+<h3 id="Mongodb"><a href="#Mongodb" class="headerlink" title="Mongodb"></a>Mongodb</h3><p><a href="https://www.mongodb.com/" target="_blank" rel="noopener">https://www.mongodb.com/</a><br>推荐通过homebrew安装<br>(需要先安装homebrew<a href="https://brew.sh/" target="_blank" rel="noopener">https://brew.sh/</a>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mongodb</span><br></pre></td></tr></table></figure>
+<p>创建数据库目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /data/db</span><br></pre></td></tr></table></figure>
+<p>启动Mongodb</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongod</span><br></pre></td></tr></table></figure>
+<p>安装Mongodb客户端robomongo <a href="https://robomongo.org/" target="_blank" rel="noopener">https://robomongo.org/</a></p>
+<p>打开Robomongo , create 数据库 DOClever</p>
+<h2 id="DOClever安装"><a href="#DOClever安装" class="headerlink" title="DOClever安装"></a>DOClever安装</h2><h3 id="npm部署-（后续遇到问题，不推荐）"><a href="#npm部署-（后续遇到问题，不推荐）" class="headerlink" title="npm部署 （后续遇到问题，不推荐）"></a><del>npm部署 （后续遇到问题，不推荐）</del></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install doclever -g</span><br></pre></td></tr></table></figure>
+<h3 id="源码部署"><a href="#源码部署" class="headerlink" title="源码部署"></a>源码部署</h3><p>下载DOClever源码<a href="https://github.com/sx1989827/DOClever" target="_blank" rel="noopener">https://github.com/sx1989827/DOClever</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node Downloads/DOClever-master/Server/bin/www</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mongodb://localhost:27010/DOClever</span><br></pre></td></tr></table></figure>
+<p>上传路径： /User/Shared/DOClever</p>
+<p>端口：12000</p>
+<p>安装完成后即可通过 <a href="http://localhost:12000" target="_blank" rel="noopener">http://localhost:12000</a> 访问</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/28/第一篇博文/" rel="next" title="第一篇博文">
+                <i class="fa fa-chevron-left"></i> 第一篇博文
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://janicezhw.github.io/2017/02/28/第一篇博文/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WK">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/janicezhw/files/master/hdImg_5ca63b5549b81c325ad24cf346c2e87c14882643418.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WK's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/05/06/Fastlane-Jenkins-自动化打包部署/" rel="prev" title="Fastlane + Jenkins 自动化打包部署">
+                Fastlane + Jenkins 自动化打包部署 <i class="fa fa-chevron-right"></i>
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2017/02/28/第一篇博文/" itemprop="url">
-                  第一篇博文
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-28T10:23:30+08:00">
-                2017-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Testing/" itemprop="url" rel="index">
-                    <span itemprop="name">Testing</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/02/28/第一篇博文/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/28/第一篇博文/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/02/28/第一篇博文/" class="leancloud_visitors" data-flag-title="第一篇博文">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h3 id="随便写点"><a href="#随便写点" class="headerlink" title="随便写点"></a>随便写点</h3><p>第一次写博客哦，加油！</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://janicezhw.github.io/2017/02/27/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="WK">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="https://raw.githubusercontent.com/janicezhw/files/master/hdImg_5ca63b5549b81c325ad24cf346c2e87c14882643418.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WK's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/02/27/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-27T18:34:26+08:00">
-                2017-02-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/02/27/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/27/hello-world/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/02/27/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p><code>bash
-$ hexo new &quot;My New Post&quot;</code></p>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
           
           </div>
@@ -883,6 +482,13 @@ $ hexo new &quot;My New Post&quot;</code></p>
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2019/05/06/DOClever线下部署/" data-title="DOClever线下部署" data-url="https://janicezhw.github.io/2019/05/06/DOClever线下部署/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -902,8 +508,17 @@ $ hexo new &quot;My New Post&quot;</code></p>
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/janicezhw/files/master/hdImg_5ca63b5549b81c325ad24cf346c2e87c14882643418.jpg" alt="WK">
           <p class="site-author-name" itemprop="name">WK</p>
@@ -970,6 +585,22 @@ $ hexo new &quot;My New Post&quot;</code></p>
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备"><span class="nav-number">1.</span> <span class="nav-text">环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-js-安装："><span class="nav-number">1.1.</span> <span class="nav-text">Node.js 安装：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mongodb"><span class="nav-number">1.2.</span> <span class="nav-text">Mongodb</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOClever安装"><span class="nav-number">2.</span> <span class="nav-text">DOClever安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#npm部署-（后续遇到问题，不推荐）"><span class="nav-number">2.1.</span> <span class="nav-text">npm部署 （后续遇到问题，不推荐）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码部署"><span class="nav-number">2.2.</span> <span class="nav-text">源码部署</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1075,6 +706,10 @@ $ hexo new &quot;My New Post&quot;</code></p>
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
