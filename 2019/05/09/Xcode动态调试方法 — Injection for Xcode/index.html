@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="如何使用GitBook 关于代码规范">
-<meta property="og:type" content="website">
-<meta property="og:title" content="WK&#39;s Blog">
-<meta property="og:url" content="https://janicezhw.github.io/gitbook/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Xcode动态调试方法 — Injection for Xcode">
+<meta property="og:url" content="https://janicezhw.github.io/2019/05/09/Xcode动态调试方法 — Injection for Xcode/index.html">
 <meta property="og:site_name" content="WK&#39;s Blog">
-<meta property="og:description" content="如何使用GitBook 关于代码规范">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-06T09:14:47.902Z">
+<meta property="og:image" content="https://static001.geekbang.org/resource/image/a2/13/a239763b1a5c7226e5ee8d7481285a13.gif">
+<meta property="og:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/E6979875-556C-4BBA-AE09-4C4A4ECCAD2B.png">
+<meta property="og:updated_time" content="2019-05-09T08:00:34.044Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WK&#39;s Blog">
-<meta name="twitter:description" content="如何使用GitBook 关于代码规范">
+<meta name="twitter:title" content="Xcode动态调试方法 — Injection for Xcode">
+<meta name="twitter:image" content="https://static001.geekbang.org/resource/image/a2/13/a239763b1a5c7226e5ee8d7481285a13.gif">
 
 
 
@@ -125,19 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://janicezhw.github.io/gitbook/">
+  <link rel="canonical" href="https://janicezhw.github.io/2019/05/09/Xcode动态调试方法 — Injection for Xcode/">
 
 
 
 
 
-  <title>
-  
-
-  
-     | WK's Blog
-  
-</title>
+  <title> Xcode动态调试方法 — Injection for Xcode | WK's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -172,7 +166,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -277,20 +271,197 @@
             
 
   <div id="posts" class="posts-expand">
-  <header class="post-header">
+    
 
-	<h1 class="post-title" itemprop="name headline"></h1>
+  
 
+  
+  
+  
 
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://janicezhw.github.io/2019/05/09/Xcode动态调试方法 — Injection for Xcode/">
 
-</header>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WK">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/janicezhw/files/master/hdImg_5ca63b5549b81c325ad24cf346c2e87c14882643418.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WK's Blog">
+    </span>
 
     
-    
-      <p><a href="/gitbook/startusegitbook">如何使用GitBook</a></p>
-<p><a href="/gitbook/Test">关于代码规范</a></p>
+      <header class="post-header">
 
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Xcode动态调试方法 — Injection for Xcode
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-09T15:46:29+08:00">
+                2019-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/09/Xcode动态调试方法 — Injection for Xcode/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/05/09/Xcode动态调试方法 — Injection for Xcode/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/05/09/Xcode动态调试方法 — Injection for Xcode/" class="leancloud_visitors" data-flag-title="Xcode动态调试方法 — Injection for Xcode">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
     
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://static001.geekbang.org/resource/image/a2/13/a239763b1a5c7226e5ee8d7481285a13.gif" alt></p>
+<a id="more"></a>
+<h3 id="安装Injection"><a href="#安装Injection" class="headerlink" title="安装Injection"></a>安装Injection</h3><p>App Store下载安装Injection，安装完成后打开应用<br><img src="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/E6979875-556C-4BBA-AE09-4C4A4ECCAD2B.png" alt></p>
+<h3 id="Xcode工程配置动态调试"><a href="#Xcode工程配置动态调试" class="headerlink" title="Xcode工程配置动态调试"></a>Xcode工程配置动态调试</h3><p>Xcode打开项目工程<br>在项目的Appdelegate 中添加连接代码：</p>
+<p><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</code> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#if DEBUG</span><br><span class="line">//or oc</span><br><span class="line">[[NSBundle bundleWithPath:@&quot;/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle&quot;] load];</span><br><span class="line">//or switf</span><br><span class="line">//Bundle(path: &quot;/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle&quot;)?.load()</span><br><span class="line">//for tvOS:</span><br><span class="line">//Bundle(path: &quot;/Applications/InjectionIII.app/Contents/Resources/tvOSInjection.bundle&quot;)?.load()</span><br><span class="line">//Or for macOS:</span><br><span class="line">//Bundle(path: &quot;/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle&quot;)?.load()</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<p>Xcode使用模拟器运行工程</p>
+<h3 id="Injection-Open-Project-选择对应工程目录"><a href="#Injection-Open-Project-选择对应工程目录" class="headerlink" title="Injection -  Open Project 选择对应工程目录"></a>Injection -  Open Project 选择对应工程目录</h3><p>在Injection菜单选择Open Project 选择对应工程目录</p>
+<p>   在Xcode视图将显示<code>💉 Injection connected, watching /Users/****/Desktop/InjectionIII/**</code> 表明连接成功</p>
+<h3 id="动态调试"><a href="#动态调试" class="headerlink" title="动态调试"></a>动态调试</h3><p>在需要动态调试的ViewController中加入如下代码 ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (void)injected &#123;</span><br><span class="line">    //self.view.backgroundColor = [UIColor yellowColor];</span><br><span class="line">    [self viewDidLoad];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打断点，cmd+s ，如果正常将进入断点，证明动态调试成功，模拟器将看到重新载入页面</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/06/Cocoapods-私有仓库/" rel="next" title="Cocoapods 私有仓库">
+                <i class="fa fa-chevron-left"></i> Cocoapods 私有仓库
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
   </div>
 
           
@@ -299,6 +470,13 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2019/05/09/Xcode动态调试方法 — Injection for Xcode/" data-title="Xcode动态调试方法 — Injection for Xcode" data-url="https://janicezhw.github.io/2019/05/09/Xcode动态调试方法 — Injection for Xcode/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -318,8 +496,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/janicezhw/files/master/hdImg_5ca63b5549b81c325ad24cf346c2e87c14882643418.jpg" alt="WK">
           <p class="site-author-name" itemprop="name">WK</p>
@@ -372,6 +559,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Injection"><span class="nav-number">1.</span> <span class="nav-text">安装Injection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Xcode工程配置动态调试"><span class="nav-number">2.</span> <span class="nav-text">Xcode工程配置动态调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Injection-Open-Project-选择对应工程目录"><span class="nav-number">3.</span> <span class="nav-text">Injection -  Open Project 选择对应工程目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态调试"><span class="nav-number">4.</span> <span class="nav-text">动态调试</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -477,6 +680,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
