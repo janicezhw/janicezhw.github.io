@@ -94,7 +94,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://static001.geekbang.org/resource/image/a2/13/a239763b1a5c7226e5ee8d7481285a13.gif">
 <meta property="og:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/E6979875-556C-4BBA-AE09-4C4A4ECCAD2B.png">
-<meta property="og:updated_time" content="2019-05-09T08:00:34.044Z">
+<meta property="og:updated_time" content="2019-05-10T07:13:25.310Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode动态调试方法 — Injection for Xcode">
 <meta name="twitter:image" content="https://static001.geekbang.org/resource/image/a2/13/a239763b1a5c7226e5ee8d7481285a13.gif">
@@ -381,7 +381,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#if DEBUG</span><br><span class="line">//or oc</span><br><span class="line">[[NSBundle bundleWithPath:@&quot;/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle&quot;] load];</span><br><span class="line">//or switf</span><br><span class="line">//Bundle(path: &quot;/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle&quot;)?.load()</span><br><span class="line">//for tvOS:</span><br><span class="line">//Bundle(path: &quot;/Applications/InjectionIII.app/Contents/Resources/tvOSInjection.bundle&quot;)?.load()</span><br><span class="line">//Or for macOS:</span><br><span class="line">//Bundle(path: &quot;/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle&quot;)?.load()</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 <p>Xcode使用模拟器运行工程</p>
 <h3 id="Injection-Open-Project-选择对应工程目录"><a href="#Injection-Open-Project-选择对应工程目录" class="headerlink" title="Injection -  Open Project 选择对应工程目录"></a>Injection -  Open Project 选择对应工程目录</h3><p>在Injection菜单选择Open Project 选择对应工程目录</p>
-<p>   在Xcode视图将显示<code>💉 Injection connected, watching /Users/****/Desktop/InjectionIII/**</code> 表明连接成功</p>
+<p>在Xcode视图将显示<code>💉 Injection connected, watching /Users/****/Desktop/InjectionIII/**</code> 表明连接成功</p>
 <h3 id="动态调试"><a href="#动态调试" class="headerlink" title="动态调试"></a>动态调试</h3><p>在需要动态调试的ViewController中加入如下代码 ：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- (void)injected &#123;</span><br><span class="line">    //self.view.backgroundColor = [UIColor yellowColor];</span><br><span class="line">    [self viewDidLoad];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>打断点，cmd+s ，如果正常将进入断点，证明动态调试成功，模拟器将看到重新载入页面</p>
@@ -424,6 +424,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/31/Charles抓包/" rel="prev" title="Charles抓包">
+                Charles抓包 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -519,7 +523,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
