@@ -94,15 +94,15 @@
 <meta property="og:site_name" content="WK&#39;s Blog">
 <meta property="og:description" content="Cocoapods仓库分为两类：公共仓库、私有仓库 公共仓库：项目中用pod管理的第三方库，我们也可以创建自己的pod仓库。 私有仓库：主要用于自己一些公共库封装管理；或者项目组件化后，各个组件独立项目，成为一个pod仓库 本文主要讨论Cocoapods私有仓库的创建：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/newspecsProject.png">
-<meta property="og:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/image-20190311151024393.png">
-<meta property="og:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/image-20190311144640390.png">
-<meta property="og:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/image-20190311173138843.png">
-<meta property="og:updated_time" content="2019-05-06T09:09:06.918Z">
+<meta property="og:image" content="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/newspecsProject.png">
+<meta property="og:image" content="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/image-20190311151024393.png">
+<meta property="og:image" content="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/image-20190311144640390.png">
+<meta property="og:image" content="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/image-20190311173138843.png">
+<meta property="og:updated_time" content="2019-06-17T07:50:59.956Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cocoapods 私有仓库">
 <meta name="twitter:description" content="Cocoapods仓库分为两类：公共仓库、私有仓库 公共仓库：项目中用pod管理的第三方库，我们也可以创建自己的pod仓库。 私有仓库：主要用于自己一些公共库封装管理；或者项目组件化后，各个组件独立项目，成为一个pod仓库 本文主要讨论Cocoapods私有仓库的创建：">
-<meta name="twitter:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/newspecsProject.png">
+<meta name="twitter:image" content="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/newspecsProject.png">
 
 
 
@@ -383,16 +383,16 @@
 <p>私有仓库：主要用于自己一些公共库封装管理；或者项目组件化后，各个组件独立项目，成为一个pod仓库</p>
 <p>本文主要讨论Cocoapods私有仓库的创建：</p>
 <a id="more"></a>
-<h3 id="1、创建-仓库specs项目"><a href="#1、创建-仓库specs项目" class="headerlink" title="1、创建 仓库specs项目"></a>1、创建 仓库specs项目</h3><p><img src="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/newspecsProject.png" alt="image-20190311150441424"></p>
+<h3 id="1、创建-仓库specs项目"><a href="#1、创建-仓库specs项目" class="headerlink" title="1、创建 仓库specs项目"></a>1、创建 仓库specs项目</h3><p><img src="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/newspecsProject.png" alt="image-20190311150441424"></p>
 <p>添加到repo</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod repo add zwkRepos git@git.dev.tencent.com:jindouyun_wk/ZWKSpecs.git</span><br></pre></td></tr></table></figure>
 <p>需要注意是否有git权限(项目公钥)<br>添加成功：</p>
-<p><img src="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/image-20190311151024393.png" alt="image-20190311151024393"></p>
-<h3 id="2、创建-仓库项目"><a href="#2、创建-仓库项目" class="headerlink" title="2、创建 仓库项目"></a>2、创建 仓库项目</h3><p><img src="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/image-20190311144640390.png" alt="image-20190307180231720"></p>
+<p><img src="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/image-20190311151024393.png" alt="image-20190311151024393"></p>
+<h3 id="2、创建-仓库项目"><a href="#2、创建-仓库项目" class="headerlink" title="2、创建 仓库项目"></a>2、创建 仓库项目</h3><p><img src="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/image-20190311144640390.png" alt="image-20190307180231720"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 项目</span><br></pre></td></tr></table></figure>
 <p>cd 进入项目，初始化创建podspec文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod spec create ZWKCategory</span><br></pre></td></tr></table></figure>
-<p><img src="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/image-20190311173138843.png" alt="image-20190311173138843"></p>
+<p><img src="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/image-20190311173138843.png" alt="image-20190311173138843"></p>
 <p>编辑内容， 主要用到的参数。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Pod::Spec.new do |s|</span><br><span class="line">  s.name         = &quot;ZWKCategory&quot; # 项目名称</span><br><span class="line">  s.version      = &quot;0.0.1&quot;        # 版本号 与 你仓库的 标签号 对应</span><br><span class="line">  s.summary      = &quot;分类总结 ZWKCategory.&quot; # 项目简介</span><br><span class="line">  s.license      = &quot;MIT&quot;          # 开源证书</span><br><span class="line"></span><br><span class="line">  s.homepage     = &quot;https://dev.tencent.com/u/jindouyun_wk/p/ZWKCategory&quot; # 仓库&gt;的主页</span><br><span class="line">  s.source       = &#123; :git =&gt; &quot;https://git.dev.tencent.com/jindouyun_wk/ZWKCategory.git&quot;, :tag =&gt; &quot;#&#123;s.version&#125;&quot; &#125;#你的仓库地址，不能用SSH地址</span><br><span class="line">  s.source_files = &quot;ZWKCategory/*.&#123;h,m&#125;&quot; # 你代码的位置， BYPhoneNumTF/*.&#123;h,m&#125; 表示 BYPhoneNumTF 文件夹下所有的.h和.m文件</span><br><span class="line">  s.requires_arc = true # 是否启用ARC</span><br><span class="line">  s.platform     = :ios, &quot;7.0&quot; #平台及支持的最低版本</span><br><span class="line">  # s.frameworks   = &quot;UIKit&quot;, &quot;Foundation&quot; #支持的框架</span><br><span class="line">  # s.dependency   = &quot;AFNetworking&quot; # 依赖库</span><br><span class="line"></span><br><span class="line">  # User</span><br><span class="line">  s.author             = &#123; &quot;WK&quot; =&gt; &quot;janicezhw@gmail.com&quot; &#125; # 作者信息</span><br><span class="line">  s.social_media_url   = &quot;https://janicezhw.github.io/&quot; # 个人主页</span><br><span class="line"></span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 <p>验证podspec 配置文件是否正确</p>

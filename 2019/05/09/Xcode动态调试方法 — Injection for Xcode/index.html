@@ -93,8 +93,8 @@
 <meta property="og:site_name" content="WK&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://static001.geekbang.org/resource/image/a2/13/a239763b1a5c7226e5ee8d7481285a13.gif">
-<meta property="og:image" content="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/E6979875-556C-4BBA-AE09-4C4A4ECCAD2B.png">
-<meta property="og:updated_time" content="2019-05-10T07:13:25.310Z">
+<meta property="og:image" content="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/E6979875-556C-4BBA-AE09-4C4A4ECCAD2B.png">
+<meta property="og:updated_time" content="2019-06-17T07:51:01.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xcode动态调试方法 — Injection for Xcode">
 <meta name="twitter:image" content="https://static001.geekbang.org/resource/image/a2/13/a239763b1a5c7226e5ee8d7481285a13.gif">
@@ -375,7 +375,7 @@
       
         <p><img src="https://static001.geekbang.org/resource/image/a2/13/a239763b1a5c7226e5ee8d7481285a13.gif" alt></p>
 <a id="more"></a>
-<h3 id="安装Injection"><a href="#安装Injection" class="headerlink" title="安装Injection"></a>安装Injection</h3><p>App Store下载安装Injection，安装完成后打开应用<br><img src="http://pr2qnzw6t.bkt.clouddn.com/image/markdown/E6979875-556C-4BBA-AE09-4C4A4ECCAD2B.png" alt></p>
+<h3 id="安装Injection"><a href="#安装Injection" class="headerlink" title="安装Injection"></a>安装Injection</h3><p>App Store下载安装Injection，安装完成后打开应用<br><img src="https://dev.tencent.com/u/jindouyun_wk/p/MarkdownImages/git/raw/master/E6979875-556C-4BBA-AE09-4C4A4ECCAD2B.png" alt></p>
 <h3 id="Xcode工程配置动态调试"><a href="#Xcode工程配置动态调试" class="headerlink" title="Xcode工程配置动态调试"></a>Xcode工程配置动态调试</h3><p>Xcode打开项目工程<br>在项目的Appdelegate 中添加连接代码：</p>
 <p><code>- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</code> </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#if DEBUG</span><br><span class="line">//or oc</span><br><span class="line">[[NSBundle bundleWithPath:@&quot;/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle&quot;] load];</span><br><span class="line">//or switf</span><br><span class="line">//Bundle(path: &quot;/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle&quot;)?.load()</span><br><span class="line">//for tvOS:</span><br><span class="line">//Bundle(path: &quot;/Applications/InjectionIII.app/Contents/Resources/tvOSInjection.bundle&quot;)?.load()</span><br><span class="line">//Or for macOS:</span><br><span class="line">//Bundle(path: &quot;/Applications/InjectionIII.app/Contents/Resources/macOSInjection.bundle&quot;)?.load()</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
