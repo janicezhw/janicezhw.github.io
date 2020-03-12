@@ -1,0 +1,880 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0">
+
+
+
+
+
+
+<meta name="description" content="HTML 元素参考">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML基础">
+<meta property="og:url" content="https://janicezhw.github.io/2019/07/31/html基础/index.html">
+<meta property="og:site_name" content="WK&#39;s Blog">
+<meta property="og:description" content="HTML 元素参考">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://janicezhw.github.io/2019/07/31/html基础/media/15644730995007.jpg">
+<meta property="og:updated_time" content="2019-10-16T07:11:42.145Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML基础">
+<meta name="twitter:description" content="HTML 元素参考">
+<meta name="twitter:image" content="https://janicezhw.github.io/2019/07/31/html基础/media/15644730995007.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"简书":"http://www.jianshu.com/"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://janicezhw.github.io/2019/07/31/html基础/">
+
+
+
+
+
+  <title> HTML基础 | WK's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?3ff423a8a109f2f6a0b984b3acd66abb";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">WK's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-gitbook">
+          <a href="/gitbook" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            GitBook
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://janicezhw.github.io/2019/07/31/html基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="WK">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://raw.githubusercontent.com/janicezhw/files/master/hdImg_5ca63b5549b81c325ad24cf346c2e87c14882643418.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WK's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                HTML基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-31T09:50:53+08:00">
+                2019-07-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/31/html基础/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2019/07/31/html基础/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/07/31/html基础/" class="leancloud_visitors" data-flag-title="HTML基础">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element" target="_blank" rel="noopener">HTML 元素参考</a></p>
+<a id="more"></a>
+<h1 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt; &lt;!-- h5 文档申明--&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta ……&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;         &gt;</span><br><span class="line">    &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>head中的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;  &lt;!--语言 UTF-8:万国码--&gt;</span><br><span class="line">    &lt;title&gt;My test page&lt;/title&gt; &lt;!--标题--&gt;</span><br><span class="line"></span><br><span class="line">    &lt;meta name=&quot;author&quot; content=&quot;Chris Mills&quot;&gt; &lt;!-- 作者 seo、搜索--&gt;</span><br><span class="line">    &lt;meta name=&quot;description&quot; content=&quot;This is an example page to demonstrate usage of metadata on web pages.&quot;&gt; &lt;!-- 描述  seo、搜索 --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;meta property=&quot;og:image&quot; content=&quot;https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png&quot;&gt;</span><br><span class="line">    &lt;meta property=&quot;og:description&quot; content=&quot;This is an example page to demonstrate usage of metadata on web pages.&quot;&gt;</span><br><span class="line">    &lt;meta property=&quot;og:title&quot; content=&quot;Metadata; The HTML &amp;lt;head&amp;gt;, on MDN&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;link rel=&quot;Shortcut Icon&quot; href=&quot;favicon.ico&quot; type=&quot;image/x-icon&quot;&gt;</span><br><span class="line">    &lt;!-- &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt; --&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure></p>
+<h1 id="body中的标签"><a href="#body中的标签" class="headerlink" title="body中的标签"></a>body中的标签</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- h1 页面中重要标题：文章标题。如果 head 中没有 title 则浏览器会识别 h1 中内容为标题 --&gt;</span><br><span class="line">&lt;h1&gt;页面标题&lt;/h1&gt; </span><br><span class="line">&lt;p&gt;段落&lt;/p&gt;</span><br><span class="line">&lt;strong&gt;强调&lt;/strong&gt;</span><br><span class="line">&lt;br&gt; &lt;!--换行--&gt;</span><br><span class="line">&lt;em&gt;强调、斜体&lt;/em&gt;</span><br><span class="line">&lt;i&gt;斜字体：外国文字，分类名称，技术术语，一种思想……&lt;/i&gt;</span><br><span class="line">&lt;b&gt;加粗：关键字，产品名称，引导句……&lt;/b&gt;</span><br><span class="line">&lt;u&gt;下划线：专有名词，拼写错误&lt;/u&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- a 标签，链接。--&gt;</span><br><span class="line">&lt;p&gt;欲练&lt;a href=&quot;https://zh.wikipedia.org/zh-hans/葵花宝典&quot; title=&quot;葵花宝典简介&quot; target=&quot;_blank&quot;&gt;葵花宝典&lt;/a&gt;，需引刀自宫&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;a href=&quot;https://www.mozilla.org/en-US/&quot;&gt;</span><br><span class="line">    &lt;img src=&quot;https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png&quot;</span><br><span class="line">        alt=&quot;mozilla logo that links to the mozilla homepage&quot;&gt;</span><br><span class="line">&lt;/a&gt;</span><br><span class="line">   </span><br><span class="line">&lt;input type=&quot;text&quot; disabled&gt;</span><br><span class="line">&lt;input type=&quot;text&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;table&gt;</span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;th scope=&quot;col&quot;&gt;等价字符引用&lt;/th&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/thead&gt;</span><br><span class="line">    &lt;tbody&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td colspan=&quot;2&quot;&gt;&amp;lt;&lt;/td&gt;  &lt;!--colspan rowspan--&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tbody&gt;</span><br><span class="line">&lt;/table&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 注释 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">    &lt;li&gt;无序列表的元素&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;无序列表的元素&lt;/li&gt;</span><br><span class="line">    &lt;ol&gt;</span><br><span class="line">        &lt;li&gt;有序列表的元素&lt;/li&gt;</span><br><span class="line">        &lt;li&gt;有序列表的元素&lt;/li&gt;</span><br><span class="line">    &lt;/ol&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 绝对URL和相对URL：尽可能使用相对路径，避免 绝对路径每次浏览器都从CDN开始定位 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- download 属性，下载默认文件名 --&gt;</span><br><span class="line">&lt;a href=&quot;https://download.mozilla.org/?product=firefox-latest-ssl&amp;os=win64&amp;lang=en-US&quot;</span><br><span class="line">    download=&quot;firefox-latest-64bit-installer.exe&quot;&gt;</span><br><span class="line">    Download Latest Firefox for Windows (64-bit) (English, US)</span><br><span class="line">&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+<p>##高级文字格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 描述列表 </span><br><span class="line">&lt;dl&gt;</span><br><span class="line">    &lt;dt&gt;</span><br><span class="line">        &lt;dd&gt;</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 引文 cite ：引用自某人、某个帖子 --&gt;</span><br><span class="line">&lt;p&gt;According to the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote&quot;&gt;</span><br><span class="line">        &lt;cite&gt;MDN blockquote page&lt;/cite&gt;&lt;/a&gt;:</span><br><span class="line">&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 块引用 blockquote  --&gt;</span><br><span class="line">&lt;blockquote cite=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote&quot;&gt;</span><br><span class="line">    &lt;p&gt;The &lt;strong&gt;HTML &lt;code&gt;&amp;lt;blockquote&amp;gt;&lt;/code&gt; Element&lt;/strong&gt; (or &lt;em&gt;HTML Block</span><br><span class="line">            Quotation Element&lt;/em&gt;) indicates that the enclosed text is an extended quotation.&lt;/p&gt;</span><br><span class="line">&lt;/blockquote&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 行内引用 --&gt;</span><br><span class="line">&lt;p&gt;The quote element — &lt;code&gt;&amp;lt;q&amp;gt;&lt;/code&gt; — is &lt;q</span><br><span class="line">        cite=&quot;https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q&quot;&gt;intended</span><br><span class="line">        for short quotations that don&apos;t require paragraph breaks.&lt;/q&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 缩略语 &lt;abbr&gt; --&gt;</span><br><span class="line">&lt;p&gt;我们使用 &lt;abbr title=&quot;超文本标记语言（Hypertext Markup Language）&quot;&gt;HTML&lt;/abbr&gt; 来组织网页文档。&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- address 标记联系方式 --&gt;</span><br><span class="line">&lt;address&gt;</span><br><span class="line">    &lt;p&gt;Page written by &lt;a href=&quot;../authors/chris-mills/&quot;&gt;Chris Mills&lt;/a&gt;.&lt;/p&gt;</span><br><span class="line">&lt;/address&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 上标和下标  &lt;sup&gt; 和&lt;sub&gt; --&gt;</span><br><span class="line">&lt;p&gt;咖啡因的化学方程式是 C&lt;sub&gt;8&lt;/sub&gt;H&lt;sub&gt;10&lt;/sub&gt;N&lt;sub&gt;4&lt;/sub&gt;O&lt;sub&gt;2&lt;/sub&gt;。&lt;/p&gt;</span><br><span class="line">&lt;p&gt;如果 x&lt;sup&gt;2&lt;/sup&gt; 的值为 9，那么 x 的值必为 3 或 -3。&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<p>##文档与网站架构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 语义标签 </span><br><span class="line">&lt;header&gt;：页眉。</span><br><span class="line">&lt;nav&gt;：导航栏。</span><br><span class="line">&lt;main&gt;：主内容。主内容中还可以有各种子内容区段，可用&lt;article&gt;、&lt;section&gt; 和 &lt;div&gt; 等元素表示。</span><br><span class="line">&lt;aside&gt;：侧边栏，经常嵌套在 &lt;main&gt; 中。</span><br><span class="line">&lt;footer&gt;：页脚。 </span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 无语义元素</span><br><span class="line">    &lt;div&gt; 和 &lt;span&gt;</span><br><span class="line"> --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 换行与水平分割线 &lt;br&gt; 和 &lt;hr&gt; --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt; --&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="源义字符的展示"><a href="#源义字符的展示" class="headerlink" title="源义字符的展示"></a>源义字符的展示</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 源义字符 展示替换 --&gt;</span><br><span class="line">&lt;a href=&quot;http://www.baidu.com&quot; title=&quot;你觉得&apos;好玩吗&apos;？&quot;&gt;示例站点链接&lt;/a&gt;</span><br><span class="line">&lt;p&gt;HTML 中用 &amp;lt;p&amp;gt; 来定义段落元素&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="media/15644730995007.jpg" alt="-w867"><br>空格 &amp;nbsp</p>
+<h2 id="HTML验证器"><a href="#HTML验证器" class="headerlink" title="HTML验证器"></a>HTML验证器</h2><p><a href="https://validator.w3.org/" target="_blank" rel="noopener">Markup Validation Service</a></p>
+<h1 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;figure&gt;</span><br><span class="line">  &lt;img src=&quot;https://raw.githubusercontent.com/mdn/learning-area/master/html/multimedia-and-embedding/images-in-html/dinosaur_small.jpg&quot;</span><br><span class="line">     alt=&quot;一只恐龙头部和躯干的骨架，它有一个巨大的头，长着锋利的牙齿。&quot;&gt;</span><br><span class="line">  &lt;figcaption&gt;曼彻斯特大学博物馆展出的一只霸王龙的化石&lt;/figcaption&gt;</span><br><span class="line">&lt;/figure&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><p>src：只能设置一种格式，可能遇到浏览器兼容问题<br>source（推荐）： 可以设置多种格式。浏览器可以通过type，自动识别支持的type，进行加载。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--</span><br><span class="line"> width=&quot;400&quot; height=&quot;400&quot;</span><br><span class="line">       autoplay 自动播放</span><br><span class="line">       loop     循环播放</span><br><span class="line">       muted    静音播放</span><br><span class="line">       poster=&quot;poster.png&quot;  默认图片</span><br><span class="line">--&gt;</span><br><span class="line"></span><br><span class="line">&lt;video src=&quot;rabbit320.webm&quot; controls&gt;</span><br><span class="line">  &lt;p&gt;你的浏览器不支持 HTML5 视频。可点击&lt;a href=&quot;rabbit320.mp4&quot;&gt;此链接&lt;/a&gt;观看&lt;/p&gt;</span><br><span class="line">&lt;/video&gt;</span><br><span class="line"></span><br><span class="line">&lt;video controls&gt;</span><br><span class="line">    &lt;source src=&quot;example.mp4&quot; type=&quot;video/mp4&quot;&gt;</span><br><span class="line">    &lt;source src=&quot;example.webm&quot; type=&quot;video/webm&quot;&gt;</span><br><span class="line">    &lt;track kind=&quot;subtitles&quot; src=&quot;subtitles_en.vtt&quot; srclang=&quot;en&quot;&gt;  &lt;!--字幕文件--&gt;</span><br><span class="line">&lt;/video&gt;</span><br><span class="line"></span><br><span class="line">&lt;audio controls&gt;</span><br><span class="line">  &lt;source src=&quot;viper.mp3&quot; type=&quot;audio/mp3&quot;&gt;</span><br><span class="line">  &lt;source src=&quot;viper.ogg&quot; type=&quot;audio/ogg&quot;&gt;</span><br><span class="line">  &lt;p&gt;你的浏览器不支持 HTML5 音频，可点击&lt;a href=&quot;viper.mp3&quot;&gt;此链接&lt;/a&gt;收听。&lt;/p&gt;</span><br><span class="line">&lt;/audio&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="iframe-嵌入网页"><a href="#iframe-嵌入网页" class="headerlink" title="iframe 嵌入网页"></a>iframe 嵌入网页</h2><p>具体参考：<a href="https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding/%E5%85%B6%E4%BB%96%E5%B5%8C%E5%85%A5%E6%8A%80%E6%9C%AF#Iframe%E8%AF%A6%E8%A7%A3" target="_blank" rel="noopener">Iframe详解</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=&quot;https://developer.mozilla.org/en-US/docs/Glossary&quot;</span><br><span class="line">        width=&quot;100%&quot; height=&quot;500&quot; frameborder=&quot;0&quot;</span><br><span class="line">        allowfullscreen sandbox&gt;</span><br><span class="line">  &lt;p&gt; &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Glossary&quot;&gt;</span><br><span class="line">    Fallback link for browsers that don&apos;t support iframes</span><br><span class="line">  &lt;/a&gt; &lt;/p&gt;</span><br><span class="line">&lt;/iframe&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="svg矢量图片-元素"><a href="#svg矢量图片-元素" class="headerlink" title="svg矢量图片/元素"></a>svg矢量图片/元素</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/SVG/Element" target="_blank" rel="noopener">SVG元素参考</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">矢量图片引用</span><br><span class="line">&lt;img </span><br><span class="line">    src=&quot;equilateral.svg&quot; </span><br><span class="line">    alt=&quot;triangle with all three sides equal&quot;</span><br><span class="line">    height=&quot;87px&quot;</span><br><span class="line">    width=&quot;100px&quot; /&gt;</span><br><span class="line">    </span><br><span class="line">&lt;!--html 内联 svg--&gt;</span><br><span class="line">&lt;svg width=&quot;300&quot; height=&quot;200&quot;&gt;</span><br><span class="line">    &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;green&quot; /&gt;</span><br><span class="line">&lt;/svg&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="响应式图片"><a href="#响应式图片" class="headerlink" title="响应式图片"></a>响应式图片</h2><p>根据屏幕设置不同图片展示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;img srcset=&quot;elva-fairy-320w.jpg 320w,</span><br><span class="line">             elva-fairy-480w.jpg 480w,</span><br><span class="line">             elva-fairy-800w.jpg 800w&quot;</span><br><span class="line">     sizes=&quot;(max-width: 320px) 280px,</span><br><span class="line">            (max-width: 480px) 440px,</span><br><span class="line">            800px&quot;</span><br><span class="line">     src=&quot;elva-fairy-800w.jpg&quot; alt=&quot;Elva dressed as a fairy&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;picture&gt;</span><br><span class="line">  &lt;source media=&quot;(max-width: 799px)&quot; srcset=&quot;elva-480w-close-portrait.jpg&quot;&gt;</span><br><span class="line">  &lt;source media=&quot;(min-width: 800px)&quot; srcset=&quot;elva-800w.jpg&quot;&gt;</span><br><span class="line">  &lt;img src=&quot;elva-800w.jpg&quot; alt=&quot;Chris standing up holding his daughter Elva&quot;&gt;</span><br><span class="line">&lt;/picture&gt;</span><br><span class="line"></span><br><span class="line">&lt;picture&gt;</span><br><span class="line">  &lt;source type=&quot;image/svg+xml&quot; srcset=&quot;pyramid.svg&quot;&gt;</span><br><span class="line">  &lt;source type=&quot;image/webp&quot; srcset=&quot;pyramid.webp&quot;&gt; </span><br><span class="line">  &lt;img src=&quot;pyramid.png&quot; alt=&quot;regular pyramid built from four equilateral triangles&quot;&gt;</span><br><span class="line">&lt;/picture&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line">&lt;caption&gt;表格标题&lt;/caption&gt;</span><br><span class="line">    &lt;colgroup&gt;</span><br><span class="line">      &lt;col style=&quot;background-color: yellow&quot; span=&quot;2&quot;&gt; &lt;!--定义整列的样式--&gt;</span><br><span class="line">    &lt;/colgroup&gt;</span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">        &lt;!-- scope：标记 th 是 col 标题还是 row 标题--&gt;</span><br><span class="line">            &lt;th scope=&quot;col&quot;&gt;等价字符引用&lt;/th&gt; </span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/thead&gt;</span><br><span class="line">     &lt;tfoot&gt;</span><br><span class="line">      &lt;tr&gt;</span><br><span class="line">        &lt;td colspan=&quot;4&quot;&gt;SUM&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;118&lt;/td&gt;</span><br><span class="line">      &lt;/tr&gt;</span><br><span class="line">    &lt;/tfoot&gt;</span><br><span class="line">    &lt;tbody&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td colspan=&quot;2&quot;&gt;&amp;lt;&lt;/td&gt;  &lt;!--colspan rowspan--&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tbody&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p><a href="https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Forms/The_native_form_widgets" target="_blank" rel="noopener">表单挂件</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;/my-handling-form-page&quot;&quot; method=&quot;GET&quot;&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;label for=&quot;name&quot;&gt;Name:&lt;/label&gt; </span><br><span class="line">        &lt;!-- for 属性，与 input 中 id 属性对应--&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; name=&quot;user_name&quot; id=&quot;name&quot;&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;fieldset&gt;</span><br><span class="line">        &lt;legend&gt;Title&lt;/legend&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li&gt;</span><br><span class="line">                &lt;label for=&quot;title_1&quot;&gt;&lt;input type=&quot;radio&quot; id=&quot;title_1&quot; name=&quot;title&quot; value=&quot;M.&quot;&gt;Mister&lt;/label&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">            &lt;li&gt;</span><br><span class="line">                &lt;label for=&quot;title_2&quot;&gt;&lt;input type=&quot;radio&quot; id=&quot;title_2&quot; name=&quot;title&quot; value=&quot;Ms.&quot;&gt;Miss&lt;/label&gt;</span><br><span class="line">            &lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/fieldset&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="单行文本框类型"><a href="#单行文本框类型" class="headerlink" title="单行文本框类型"></a>单行文本框类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; id=&quot;comment&quot; name=&quot;comment&quot; value=&quot;I&apos;m a text field&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- type=&quot;email&quot; 通过包括multiple属性，它还可以让用户将多个电子邮件地址输入相同的输入(以逗号分隔)。--&gt;</span><br><span class="line">&lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; multiple&gt;</span><br><span class="line"></span><br><span class="line">&lt;input type=&quot;password&quot; id=&quot;pwd&quot; name=&quot;pwd&quot;&gt;</span><br><span class="line">&lt;input type=&quot;search&quot; id=&quot;search&quot; name=&quot;search&quot;&gt;</span><br><span class="line">&lt;input type=&quot;tel&quot; id=&quot;tel&quot; name=&quot;tel&quot;&gt;</span><br><span class="line">&lt;input type=&quot;url&quot; id=&quot;url&quot; name=&quot;url&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="选择框"><a href="#选择框" class="headerlink" title="选择框"></a>选择框<select></select></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;simple&quot; name=&quot;simple&quot; multiple&gt;   &lt;!-- multiple 属性选择框支持多选--&gt;</span><br><span class="line">    &lt;optgroup label=&quot;fruits&quot;&gt; &lt;!-- option 分组 --&gt;</span><br><span class="line">        &lt;option&gt;Banana&lt;/option&gt;</span><br><span class="line">        &lt;option selected&gt;Cherry&lt;/option&gt;</span><br><span class="line">        &lt;option&gt;Lemon&lt;/option&gt;</span><br><span class="line">    &lt;/optgroup&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="自动补全输入框"><a href="#自动补全输入框" class="headerlink" title="自动补全输入框"></a>自动补全输入框<datalist></datalist></h3><p>注意：部分浏览器不支持（IE &lt; 10、Safair) ，解决技巧，包含<select> 当浏览器不支持的时候识别为select。<br>可以输入，过程中出现选项提示，也可直接选择<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;text&quot; name=&quot;myFruit&quot; id=&quot;myFruit&quot; list=&quot;mySuggestion&quot;&gt;</span><br><span class="line">&lt;datalist id=&quot;mySuggestion&quot;&gt;</span><br><span class="line">  &lt;option&gt;Apple&lt;/option&gt;</span><br><span class="line">  &lt;option&gt;Banana&lt;/option&gt;</span><br><span class="line">  &lt;option&gt;Blackberry&lt;/option&gt;</span><br><span class="line">&lt;/datalist&gt;</span><br></pre></td></tr></table></figure></select></p>
+<h3 id="复选框-checkbox"><a href="#复选框-checkbox" class="headerlink" title="复选框 checkbox"></a>复选框 checkbox</h3><p>name 相同为一组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;checkbox&quot; checked id=&quot;carrots&quot; name=&quot;carrots&quot; value=&quot;carrots&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="单选按钮-radio"><a href="#单选按钮-radio" class="headerlink" title="单选按钮 radio"></a>单选按钮 radio</h3><p>name 相同为一组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;radio&quot; checked id=&quot;soup&quot; name=&quot;meal&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="多行文本框"><a href="#多行文本框" class="headerlink" title="多行文本框"></a>多行文本框</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea cols=&quot;30&quot; rows=&quot;10&quot;&gt;输入框默认值&lt;/textarea&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3><p>两种方式 <code>&lt;button type=&quot;submit&quot;&gt;</code> 和 <code>&lt;input type=&quot;submit&quot;&gt;</code><br>type类型支持 submit、reset、button<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;button type=&quot;submit&quot;&gt;</span><br><span class="line">    This a &lt;br&gt;&lt;strong&gt;submit button&lt;/strong&gt;</span><br><span class="line">&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">&lt;input type=&quot;submit&quot; value=&quot;This is a submit button&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h3><p>注意：（IE &lt; 10 不支持）<br>通过设置min和max属性来约束该值。<br>通过设置step属性来指定增加和减少按钮更改小部件的步进值大小<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;number&quot; name=&quot;age&quot; id=&quot;age&quot; min=&quot;1&quot; max=&quot;10&quot; step=&quot;2&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="滑块"><a href="#滑块" class="headerlink" title="滑块"></a>滑块</h3><p>注意：（IE &lt; 10 不支持）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;range&quot; name=&quot;beans&quot; id=&quot;beans&quot; min=&quot;0&quot; max=&quot;500&quot; step=&quot;10&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="日期时间选择器"><a href="#日期时间选择器" class="headerlink" title="日期时间选择器"></a>日期时间选择器</h3><p>注意：Firefox和Safari对这些都没有太大的支持。<br>所有日期和时间控制都可以使用min和max属性来约束<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;datetime-local&quot; name=&quot;datetime&quot; id=&quot;datetime&quot;&gt;</span><br><span class="line">&lt;input type=&quot;month&quot; name=&quot;month&quot; id=&quot;month&quot;&gt;</span><br><span class="line">&lt;input type=&quot;time&quot; name=&quot;time&quot; id=&quot;time&quot;&gt;</span><br><span class="line">&lt;input type=&quot;week&quot; name=&quot;week&quot; id=&quot;week&quot;&gt;</span><br><span class="line">&lt;input type=&quot;date&quot; name=&quot;myDate&quot; min=&quot;2013-06-01&quot; max=&quot;2013-08-31&quot; id=&quot;myDate&quot;&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="文件选择器"><a href="#文件选择器" class="headerlink" title="文件选择器"></a>文件选择器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;file&quot; name=&quot;file&quot; id=&quot;file&quot; accept=&quot;image/*&quot; multiple&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;form method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;label for=&quot;file&quot;&gt;Choose a file&lt;/label&gt;</span><br><span class="line">    &lt;input type=&quot;file&quot; id=&quot;file&quot; name=&quot;myFile&quot;&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button&gt;Send the file&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/26/对比总结/" rel="next" title="微信小程序 vs React对比总结">
+                <i class="fa fa-chevron-left"></i> 微信小程序 vs React对比总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/05/CSS基础/" rel="prev" title="CSS基础">
+                CSS基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2019/07/31/html基础/" data-title="HTML基础" data-url="https://janicezhw.github.io/2019/07/31/html基础/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="https://raw.githubusercontent.com/janicezhw/files/master/hdImg_5ca63b5549b81c325ad24cf346c2e87c14882643418.jpg" alt="WK">
+          <p class="site-author-name" itemprop="name">WK</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/janicezhw" target="_blank" title="Github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本结构"><span class="nav-number">1.</span> <span class="nav-text">基本结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#body中的标签"><span class="nav-number">2.</span> <span class="nav-text">body中的标签</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#源义字符的展示"><span class="nav-number">2.1.</span> <span class="nav-text">源义字符的展示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML验证器"><span class="nav-number">2.2.</span> <span class="nav-text">HTML验证器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多媒体"><span class="nav-number">3.</span> <span class="nav-text">多媒体</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#视频"><span class="nav-number">3.1.</span> <span class="nav-text">视频</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iframe-嵌入网页"><span class="nav-number">3.2.</span> <span class="nav-text">iframe 嵌入网页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#svg矢量图片-元素"><span class="nav-number">3.3.</span> <span class="nav-text">svg矢量图片/元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应式图片"><span class="nav-number">3.4.</span> <span class="nav-text">响应式图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表格"><span class="nav-number">3.5.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表单"><span class="nav-number">3.6.</span> <span class="nav-text">表单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行文本框类型"><span class="nav-number">3.6.1.</span> <span class="nav-text">单行文本框类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择框"><span class="nav-number">3.6.2.</span> <span class="nav-text">选择框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动补全输入框"><span class="nav-number">3.6.3.</span> <span class="nav-text">自动补全输入框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复选框-checkbox"><span class="nav-number">3.6.4.</span> <span class="nav-text">复选框 checkbox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单选按钮-radio"><span class="nav-number">3.6.5.</span> <span class="nav-text">单选按钮 radio</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行文本框"><span class="nav-number">3.6.6.</span> <span class="nav-text">多行文本框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#按钮"><span class="nav-number">3.6.7.</span> <span class="nav-text">按钮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数字"><span class="nav-number">3.6.8.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#滑块"><span class="nav-number">3.6.9.</span> <span class="nav-text">滑块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日期时间选择器"><span class="nav-number">3.6.10.</span> <span class="nav-text">日期时间选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件选择器"><span class="nav-number">3.6.11.</span> <span class="nav-text">文件选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上传文件"><span class="nav-number">3.6.12.</span> <span class="nav-text">上传文件</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WK</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"janicezhw"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Gq9VEYljjI1AdBSlrVaXagI5-gzGzoHsz", "ozyf9hlQxFmlqfbGo4utAzS3");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
