@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云南五一三日游 | 构成主义风格攻略</title>
+    <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/tailwindcss/2.2.19/tailwind.min.css">
+    <link rel="stylesheet" href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-100-M/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+    <style>
+        :root {
+            --red: #e51613;
+            --black: #000000;
+            --gray: #333333;
+            --light-gray: #f0f0f0;
+            --white: #ffffff;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+            --font-main: 'Noto Sans SC', sans-serif;
+            --font-title: 'Noto Serif SC', serif;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--black);
+            color: var(--white);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+        }
+
+        /* 构成主义风格元素 */
+        .constructivism-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .geometric-element {
+            position: absolute;
+            z-index: 0;
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .triangle-1 {
+            border-width: 0 100px 100px 0;
+            border-color: transparent var(--red) transparent transparent;
+            top: 50px;
+            right: 0;
+        }
+
+        .triangle-2 {
+            border-width: 80px 0 0 80px;
+            border-color: transparent transparent transparent var(--red);
+            bottom: 100px;
+            left: 20px;
+        }
+
+        .circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--red);
+            top: 70%;
+            right: -60px;
+        }
+
+        .line {
+            position: absolute;
+            background-color: var(--red);
+        }
+
+        .line-horizontal {
+            height: 2px;
+            width: 100%;
+            top: 45%;
+            left: 0;
+        }
+
+        .line-diagonal {
+            height: 2px;
+            width: 150px;
+            transform: rotate(45deg);
+            top: 15%;
+            left: -20px;
+        }
+
+        .line-vertical {
+            height: 150px;
+            width: 2px;
+            top: 65%;
+            left: 35%;
+        }
+
+        /* 文字样式 */
+        .title-constructivism {
+            font-family: var(--font-title);
+            font-weight: 700;
+            color: var(--red);
+            transform: skewY(-5deg);
+            letter-spacing: -0.02em;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .title-black-block {
+            display: inline-block;
+            background-color: var(--black);
+            color: var(--white);
+            padding: 0.2rem 1rem;
+            margin: 0.2rem 0;
+            transform: rotate(-2deg);
+        }
+
+        .title-red-block {
+            display: inline-block;
+            background-color: var(--red);
+            color: var(--white);
+            padding: 0.2rem 1rem;
+            margin: 0.2rem 0;
+        }
+
+        .subtitle-diagonal {
+            transform: rotate(-5deg);
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: var(--spacing-md);
+            padding: 0.2rem 0.5rem;
+            background-color: var(--black);
+            color: var(--red);
+        }
+
+        /* 内容区域样式 */
+        .content-section {
+            position: relative;
+            padding: var(--spacing-lg);
+            background-color: var(--black);
+            border-left: 5px solid var(--red);
+            margin: var(--spacing-lg) 0;
+            z-index: 1;
+        }
+
+        /* 日期标记 */
+        .date-marker {
+            position: absolute;
+            right: 0;
+            top: -15px;
+            background-color: var(--red);
+            color: var(--white);
+            padding: 0.2rem 1rem;
+            font-weight: 700;
+            font-size: 0.8rem;
+            transform: rotate(2deg);
+            z-index: 2;
+        }
+
+        /* 时间轴样式 */
+        .timeline {
+            position: relative;
+            padding: var(--spacing-md);
+            padding-left: var(--spacing-lg);
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 2px;
+            background-color: var(--red);
+            transform: rotate(2deg);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-md);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--red);
+            transform: rotate(45deg);
+        }
+
+        .timeline-time {
+            font-weight: 700;
+            color: var(--red);
+            display: inline-block;
+            transform: skewX(-15deg);
+        }
+
+        /* 表格样式 */
+        .constructivism-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 2px;
+            margin: var(--spacing-md) 0;
+        }
+
+        .constructivism-table th {
+            background-color: var(--red);
+            color: var(--white);
+            padding: var(--spacing-sm);
+            font-weight: 700;
+            text-align: left;
+            transform: skewX(-5deg);
+        }
+
+        .constructivism-table td {
+            background-color: var(--black);
+            color: var(--white);
+            padding: var(--spacing-sm);
+            border-bottom: 1px solid var(--red);
+        }
+
+        /* 标签样式 */
+        .tag {
+            display: inline-block;
+            background-color: var(--red);
+            color: var(--white);
+            padding: 0.1rem 0.5rem;
+            font-size: 0.75rem;
+            margin-right: var(--spacing-sm);
+            transform: skewX(-10deg);
+        }
+
+        /* 景点卡片样式 */
+        .attraction-card {
+            background-color: var(--black);
+            border-left: 3px solid var(--red);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            position: relative;
+        }
+
+        .attraction-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-style: solid;
+            border-width: 0 20px 20px 0;
+            border-color: transparent var(--red) transparent transparent;
+        }
+
+        /* 导航按钮样式 */
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--red);
+            color: var(--white);
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border: none;
+            transform: skewX(-10deg);
+            margin-top: 0.5rem;
+            cursor: pointer;
+        }
+
+        .nav-button i {
+            margin-right: 0.25rem;
+        }
+
+        /* 导航提示样式 */
+        .nav-tooltip {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+            z-index: 100;
+        }
+
+        /* 按钮样式 */
+        .button-constructivism {
+            background-color: var(--red);
+            color: var(--white);
+            padding: var(--spacing-sm) var(--spacing-md);
+            font-weight: 700;
+            border: none;
+            transform: skewX(-10deg);
+            cursor: pointer;
+            display: inline-block;
+            margin: var(--spacing-sm) 0;
+        }
+
+        /* 联系信息样式 */
+        .contact-info {
+            background-color: var(--black);
+            border: 2px solid var(--red);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+            position: relative;
+        }
+
+        .contact-info::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: var(--black);
+            border-top: 2px solid var(--red);
+            border-left: 2px solid var(--red);
+            transform: rotate(45deg);
+        }
+
+        /* 天气信息样式 */
+        .weather-info {
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--black);
+            padding: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        .weather-city {
+            text-align: center;
+        }
+
+        .temp {
+            font-weight: 700;
+            color: var(--red);
+        }
+
+        /* 行李清单样式 */
+        .packing-list {
+            margin-top: var(--spacing-md);
+        }
+
+        .packing-item {
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+        }
+
+        .packing-item i {
+            color: var(--red);
+            margin-right: var(--spacing-sm);
+        }
+
+        /* 底部设计 */
+        .footer-diagonal {
+            position: relative;
+            height: 50px;
+            overflow: hidden;
+        }
+
+        .footer-diagonal::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100px;
+            background-color: var(--red);
+            transform: skewY(-5deg);
+            transform-origin: bottom right;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 640px) {
+            .constructivism-table {
+                font-size: 0.8rem;
+            }
+            
+            .timeline {
+                padding-left: var(--spacing-md);
+            }
+        }
+
+        /* 选项卡样式 */
+        .tab-container {
+            display: flex;
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            z-index: 2;
+        }
+
+        .tab {
+            padding: var(--spacing-sm) var(--spacing-md);
+            cursor: pointer;
+            background-color: var(--black);
+            color: var(--white);
+            border: 1px solid var(--red);
+            margin-right: -1px;
+        }
+
+        .tab.active {
+            background-color: var(--red);
+            color: var(--white);
+            font-weight: 700;
+            transform: translateY(-3px);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="constructivism-container">
+        <!-- 几何元素装饰 -->
+        <div class="geometric-element triangle triangle-1"></div>
+        <div class="geometric-element triangle triangle-2"></div>
+        <div class="geometric-element circle"></div>
+        <div class="geometric-element line line-horizontal"></div>
+        <div class="geometric-element line line-diagonal"></div>
+        <div class="geometric-element line line-vertical"></div>
+        
+        <!-- 导航提示框 -->
+        <div id="navTooltip" class="nav-tooltip">正在打开高德地图...</div>
+        
+        <!-- 页面内容 -->
+        <div class="p-4">
+            <!-- 标题区域 -->
+            <div class="mb-8 mt-4">
+                <h1 class="text-4xl title-constructivism">云南<span class="title-red-block">五一三日游</span></h1>
+                <div class="flex justify-between items-center">
+                    <p class="text-sm">2025年5月1日-3日</p>
+                    <p class="text-sm text-red-600 font-bold">攻略 | 精华行程</p>
+                </div>
+                
+                <!-- 天气信息 -->
+                <div class="weather-info mt-4">
+                    <div class="weather-city">
+                        <div>昆明</div>
+                        <div class="temp">25-27℃</div>
+                        <div class="text-xs">多云</div>
+                    </div>
+                    <div class="weather-city">
+                        <div>大理</div>
+                        <div class="temp">23-25℃</div>
+                        <div class="text-xs">多云转晴</div>
+                    </div>
+                    <div class="weather-city">
+                        <div>丽江</div>
+                        <div class="temp">23-25℃</div>
+                        <div class="text-xs">多云</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 行程概览区 -->
+            <div class="content-section">
+                <h2 class="subtitle-diagonal">行程概览</h2>
+                
+                <div class="tab-container">
+                    <div class="tab active" onclick="switchTab(0)">Day 1</div>
+                    <div class="tab" onclick="switchTab(1)">Day 2</div>
+                    <div class="tab" onclick="switchTab(2)">Day 3</div>
+                </div>
+                
+                <!-- 第一天行程 -->
+                <div class="tab-content active">
+                    <div class="date-marker">昆明</div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-time">09:00</span>
+                            <div class="ml-2">抵达昆明长水机场</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">10:00</span>
+                            <div class="ml-2">前往翠湖公园</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">11:30</span>
+                            <div class="ml-2">云南民族村午餐&体验</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">14:30</span>
+                            <div class="ml-2">石林景区(避开人流高峰)</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">18:00</span>
+                            <div class="ml-2">返回昆明市区晚餐</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">19:30</span>
+                            <div class="ml-2">入住昆明古城特色客栈</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 第二天行程 -->
+                <div class="tab-content">
+                    <div class="date-marker">大理</div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-time">07:00</span>
+                            <div class="ml-2">昆明→大理(高铁)</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">09:00</span>
+                            <div class="ml-2">抵达大理古城</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">10:00</span>
+                            <div class="ml-2">洱海骑行环湖游</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">13:00</span>
+                            <div class="ml-2">喜洲古镇午餐&扎染体验</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">16:00</span>
+                            <div class="ml-2">大理三塔文化公园</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">18:00</span>
+                            <div class="ml-2">大理古城夜景&民谣酒吧</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">21:00</span>
+                            <div class="ml-2">入住洱海湖畔度假酒店</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 第三天行程 -->
+                <div class="tab-content">
+                    <div class="date-marker">丽江</div>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <span class="timeline-time">07:30</span>
+                            <div class="ml-2">大理→丽江(汽车)</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">10:00</span>
+                            <div class="ml-2">丽江古城漫步</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">12:00</span>
+                            <div class="ml-2">黑龙潭公园(避开午高峰)</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">13:30</span>
+                            <div class="ml-2">纳西族特色午餐</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">15:00</span>
+                            <div class="ml-2">东巴文化体验与造纸坊</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">17:00</span>
+                            <div class="ml-2">束河古镇黄昏摄影</div>
+                        </div>
+                        <div class="timeline-item">
+                            <span class="timeline-time">19:00</span>
+                            <div class="ml-2">返程准备</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 必访景点区 -->
+            <div class="content-section">
+                <h2 class="subtitle-diagonal">必访景点</h2>
+                
+                <!-- 按城市选项卡 -->
+                <div class="tab-container">
+                    <div class="tab active" onclick="switchAttractions(0)">昆明</div>
+                    <div class="tab" onclick="switchAttractions(1)">大理</div>
+                    <div class="tab" onclick="switchAttractions(2)">丽江</div>
+                </div>
+                
+                <!-- 昆明景点 -->
+                <div class="attractions-content active">
+                    <div class="attraction-card">
+                        <div class="flex items-start">
+                            <div class="flex-grow">
+                                <h3 class="font-bold">翠湖公园</h3>
+                                <span class="tag">免费</span>
+                                <span class="tag">1.5小时</span>
+                                <p class="text-sm mt-2">云南最古老的公园之一，湖水、树木和亭台楼阁完美融合，是拍摄"春城"风光的绝佳地点。</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">提示：</span> 早9点前到达，避开10:00-11:30高峰期</p>
+                                <button class="nav-button" onclick="navigateToAmap('翠湖公园', 25.0524, 102.7001)">
+                                    <i class="fas fa-location-arrow"></i>导航到此处
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="flex items-start">
+                            <div class="flex-grow">
+                                <h3 class="font-bold">云南民族村</h3>
+                                <span class="tag">¥90</span>
+                                <span class="tag">2.5小时</span>
+                                <p class="text-sm mt-2">了解云南少数民族文化的窗口，聚集了26个民族的建筑和文化展示。</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">推荐：</span> 彝族生态竹楼、白族三道茶表演</p>
+                                <button class="nav-button" onclick="navigateToAmap('云南民族村', 24.9571, 102.6287)">
+                                    <i class="fas fa-location-arrow"></i>导航到此处
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="flex items-start">
+                            <div class="flex-grow">
+                                <h3 class="font-bold">石林景区</h3>
+                                <span class="tag">¥130</span>
+                                <span class="tag">3小时</span>
+                                <p class="text-sm mt-2">世界自然遗产，喀斯特地形的杰出代表。</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">路线：</span> 小石林→大石林→石林湖</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">避峰：</span> 15:00后入园，避开团队游客</p>
+                                <button class="nav-button" onclick="navigateToAmap('石林景区', 24.7894, 103.3169)">
+                                    <i class="fas fa-location-arrow"></i>导航到此处
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 大理景点 -->
+                <div class="attractions-content hidden">
+                    <div class="attraction-card">
+                        <div class="flex items-start">
+                            <div class="flex-grow">
+                                <h3 class="font-bold">洱海环湖</h3>
+                                <span class="tag">免费</span>
+                                <span class="tag">3小时</span>
+                                <p class="text-sm mt-2">大理最具标志性的景观，湖水澄澈，背靠苍山，远眺洱海非常壮观。</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">骑行：</span> 双廊码头租车点，公路车¥50/天</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">拍摄点：</span> 才村"洱海星空民宿"前观景台</p>
+                                <button class="nav-button" onclick="navigateToAmap('洱海双廊观景台', 25.6793, 100.2031)">
+                                    <i class="fas fa-location-arrow"></i>导航到此处
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="flex items-start">
+                            <div class="flex-grow">
+                                <h3 class="font-bold">大理古城</h3>
+                                <span class="tag">免费</span>
+                                <span class="tag">2小时</span>
+                                <p class="text-sm mt-2">保存完整的白族风格古城，城墙高大巍峨，气势磅礴。</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">避峰：</span> 早晨或傍晚游览，避开10:00-12:00</p>
+                                <button class="nav-button" onclick="navigateToAmap('大理古城', 25.7064, 100.1605)">
+                                    <i class="fas fa-location-arrow"></i>导航到此处
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="flex items-start">
+                            <div class="flex-grow">
+                                <h3 class="font-bold">三塔文化公园</h3>
+                                <span class="tag">¥121</span>
+                                <span class="tag">2小时</span>
+                                <p class="text-sm mt-2">大理历史文化的象征，三座千年古塔与苍山、洱海形成绝美画面。</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">最佳拍摄：</span> 16:30-17:30日落时分</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">特别：</span> 五一期间有灯光秀</p>
+                                <button class="nav-button" onclick="navigateToAmap('崇圣寺三塔文化旅游区', 25.7044, 100.1503)">
+                                    <i class="fas fa-location-arrow"></i>导航到此处
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 丽江景点 -->
+                <div class="attractions-content hidden">
+                    <div class="attraction-card">
+                        <div class="flex items-start">
+                            <div class="flex-grow">
+                                <h3 class="font-bold">丽江古城</h3>
+                                <span class="tag">¥80</span>
+                                <span class="tag">2小时</span>
+                                <p class="text-sm mt-2">UNESCO世界文化遗产，保存完好的纳西族古城。</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">路线：</span> 大水车→四方街→木府→狮子山</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">避峰：</span> 早7:00-9:00或晚18:00后最宁静</p>
+                                <button class="nav-button" onclick="navigateToAmap('丽江古城', 26.8724, 100.2328)">
+                                    <i class="fas fa-location-arrow"></i>导航到此处
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="flex items-start">
+                            <div class="flex-grow">
+                                <h3 class="font-bold">黑龙潭公园</h3>
+                                <span class="tag">免费</span>
+                                <span class="tag">1.5小时</span>
+                                <p class="text-sm mt-2">丽江最佳拍摄玉龙雪山的地点，水潭清澈，倒影完美。</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">拍摄：</span> 晴天早上8:00-9:00，雪山倒映</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">避峰：</span> 从东门进入，避开主要游客流</p>
+                                <button class="nav-button" onclick="navigateToAmap('黑龙潭公园', 26.8867, 100.2422)">
+                                    <i class="fas fa-location-arrow"></i>导航到此处
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="attraction-card">
+                        <div class="flex items-start">
+                            <div class="flex-grow">
+                                <h3 class="font-bold">束河古镇</h3>
+                                <span class="tag">¥50</span>
+                                <span class="tag">2小时</span>
+                                <p class="text-sm mt-2">比丽江古城更加宁静，保留更多原汁原味的纳西风情。</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">最佳时段：</span> 17:00-18:30，夕阳下的青石板街</p>
+                                <p class="text-sm mt-1"><span class="text-red-600 font-bold">观景点：</span> 九鼎龙潭，可拍"三景合一"</p>
+                                <button class="nav-button" onclick="navigateToAmap('束河古镇', 26.9063, 100.2239)">
+                                    <i class="fas fa-location-arrow"></i>导航到此处
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 交通信息区 -->
+            <div class="content-section">
+                <h2 class="subtitle-diagonal">交通规划</h2>
+                
+                <table class="constructivism-table">
+                    <tr>
+                        <th>路线</th>
+                        <th>方式</th>
+                        <th>时长</th>
+                        <th>票价</th>
+                    </tr>
+                    <tr>
+                        <td>抵达昆明</td>
+                        <td>飞机→大巴</td>
+                        <td>30分钟</td>
+                        <td>¥25/人</td>
+                    </tr>
+                    <tr>
+                        <td>昆明→大理</td>
+                        <td>高铁</td>
+                        <td>2小时</td>
+                        <td>¥167-198</td>
+                    </tr>
+                    <tr>
+                        <td>昆明→大理</td>
+                        <td>自驾</td>
+                        <td>3小时50分</td>
+                        <td>约¥350</td>
+                    </tr>
+                    <tr>
+                        <td>大理→丽江</td>
+                        <td>旅游巴士</td>
+                        <td>2.5小时</td>
+                        <td>¥60-80</td>
+                    </tr>
+                </table>
+                
+                <div class="mt-4">
+                    <h3 class="font-bold text-red-600">自驾路线详情</h3>
+                    <p class="text-sm">昆明→大理: G5621昆楚大高速 → G5611大丽高速</p>
+                    <p class="text-sm">总距离: 338公里，建议休息点：西山服务区、弥渡服务区</p>
+                    
+                    <h3 class="font-bold text-red-600 mt-3">高峰期建议</h3>
+                    <ul class="text-sm list-disc pl-5">
+                        <li>提前3天在高德地图预约购票</li>
+                        <li>设置拼车模式节省约40%费用</li>
+                        <li>高铁需提前30分钟安检</li>
+                        <li>自驾前下载离线地图</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- 美食餐饮区 -->
+            <div class="content-section">
+                <h2 class="subtitle-diagonal">美食与住宿</h2>
+                
+                <!-- 按城市选项卡 -->
+                <div class="tab-container">
+                    <div class="tab active" onclick="switchFood(0)">昆明</div>
+                    <div class="tab" onclick="switchFood(1)">大理</div>
+                    <div class="tab" onclick="switchFood(2)">丽江</div>
+                </div>
+                
+                <!-- 昆明美食 -->
+                <div class="food-content active">
+                    <table class="constructivism-table">
+                        <tr>
+                            <th>美食名称</th>
+                            <th>推荐餐厅</th>
+                            <th>人均</th>
+                        </tr>
+                        <tr>
+                            <td>过桥米线</td>
+                            <td>建新园</td>
+                            <td>¥40-60</td>
+                        </tr>
+                        <tr>
+                            <td>汽锅鸡</td>
+                            <td>老滇州</td>
+                            <td>¥80-100</td>
+                        </tr>
+                        <tr>
+                            <td>云南菌菇火锅</td>
+                            <td>山野菌王</td>
+                            <td>¥100-150</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="mt-4">
+                        <h3 class="font-bold text-red-600">住宿推荐</h3>
+                        <div class="attraction-card">
+                            <h4 class="font-bold">翠湖木棉花客栈</h4>
+                            <p class="text-sm">¥350-500 | 民国风格老宅</p>
+                            <p class="text-sm">翠湖北路58号 | 提前7天预订</p>
+                            <button class="nav-button mt-2" onclick="navigateToAmap('翠湖木棉花客栈', 25.0524, 102.7001)">
+                                <i class="fas fa-location-arrow"></i>查看位置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 大理美食 -->
+                <div class="food-content hidden">
+                    <table class="constructivism-table">
+                        <tr>
+                            <th>美食名称</th>
+                            <th>推荐餐厅</th>
+                            <th>人均</th>
+                        </tr>
+                        <tr>
+                            <td>白族三道茶</td>
+                            <td>古城一米阳光</td>
+                            <td>¥68/套</td>
+                        </tr>
+                        <tr>
+                            <td>砂锅鱼</td>
+                            <td>洱海人家</td>
+                            <td>¥80-100</td>
+                        </tr>
+                        <tr>
+                            <td>乳扇</td>
+                            <td>喜洲严家大院</td>
+                            <td>¥20-30</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="mt-4">
+                        <h3 class="font-bold text-red-600">住宿推荐</h3>
+                        <div class="attraction-card">
+                            <h4 class="font-bold">洱海天域度假酒店</h4>
+                            <p class="text-sm">¥880-1500 | 无敌洱海景</p>
+                            <p class="text-sm">双廊镇南端 | 提前20天预订</p>
+                            <button class="nav-button mt-2" onclick="navigateToAmap('洱海天域度假酒店', 25.6500, 100.2000)">
+                                <i class="fas fa-location-arrow"></i>查看位置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 丽江美食 -->
+                <div class="food-content hidden">
+                    <table class="constructivism-table">
+                        <tr>
+                            <th>美食名称</th>
+                            <th>推荐餐厅</th>
+                            <th>人均</th>
+                        </tr>
+                        <tr>
+                            <td>丽江粑粑</td>
+                            <td>老丽江粑粑</td>
+                            <td>¥15-20</td>
+                        </tr>
+                        <tr>
+                            <td>纳西烤肉</td>
+                            <td>阿婆纳西烤肉</td>
+                            <td>¥60-80</td>
+                        </tr>
+                        <tr>
+                            <td>鸡豆凉粉</td>
+                            <td>古城张氏凉粉</td>
+                            <td>¥15-25</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="mt-4">
+                        <h3 class="font-bold text-red-600">住宿推荐</h3>
+                        <div class="attraction-card">
+                            <h4 class="font-bold">丽江醉慢庭院</h4>
+                            <p class="text-sm">¥580-800 | 纳西族木质建筑</p>
+                            <p class="text-sm">七一街近四方街 | 提前15天预订</p>
+                            <button class="nav-button mt-2" onclick="navigateToAmap('丽江醉慢庭院', 26.8724, 100.2328)">
+                                <i class="fas fa-location-arrow"></i>查看位置
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 文化体验区 -->
+            <div class="content-section">
+                <h2 class="subtitle-diagonal">文化体验</h2>
+                
+                <div class="attraction-card">
+                    <h3 class="font-bold">白族扎染DIY</h3>
+                    <span class="tag">¥98/人</span>
+                    <span class="tag">2小时</span>
+                    <p class="text-sm mt-2">喜洲霞灿扎染坊，10:00-16:00，高德APP预约</p>
+                    <p class="text-sm mt-1"><span class="text-red-600 font-bold">体验：</span> 选布料→图案设计→折叠绑扎→染色→晾干</p>
+                    <button class="nav-button" onclick="navigateToAmap('喜洲霞灿扎染坊', 25.8403, 100.1512)">
+                        <i class="fas fa-location-arrow"></i>导航到此处
+                    </button>
+                </div>
+                
+                <div class="attraction-card">
+                    <h3 class="font-bold">东巴造纸工艺</h3>
+                    <span class="tag">¥120/人</span>
+                    <span class="tag">含材料</span>
+                    <p class="text-sm mt-2">丽江东巴谷文化馆，13:00-17:00，提前1天电话预约</p>
+                    <p class="text-sm mt-1"><span class="text-red-600 font-bold">工艺：</span> 观摩树皮打浆→捞纸→压榨晾晒→绘制东巴文</p>
+                    <button class="nav-button" onclick="navigateToAmap('丽江东巴谷文化馆', 26.8800, 100.2350)">
+                        <i class="fas fa-location-arrow"></i>导航到此处
+                    </button>
+                </div>
+                
+                <div class="attraction-card">
+                    <h3 class="font-bold">纳西古乐欣赏</h3>
+                    <span class="tag">¥280/人</span>
+                    <span class="tag">1小时</span>
+                    <p class="text-sm mt-2">丽江古城黑龙潭公园，每晚20:00，现场购票</p>
+                    <p class="text-sm mt-1"><span class="text-red-600 font-bold">特色：</span> 被称为"活化石"的纳西古乐表演</p>
+                    <button class="nav-button" onclick="navigateToAmap('黑龙潭纳西古乐表演', 26.8867, 100.2422)">
+                        <i class="fas fa-location-arrow"></i>导航到此处
+                    </button>
+                </div>
+            </div>
+            
+            <!-- 行李清单区 -->
+            <div class="content-section">
+                <h2 class="subtitle-diagonal">行李清单</h2>
+                
+                <div class="packing-list">
+                    <h3 class="font-bold text-red-600">必备服装</h3>
+                    <div class="packing-item">
+                        <i class="fas fa-check"></i>
+                        <span>短袖T恤 (3-4件)</span>
+                    </div>
+                    <div class="packing-item">
+                        <i class="fas fa-check"></i>
+                        <span>长袖衬衫/薄外套 (2件)</span>
+                    </div>
+                    <div class="packing-item">
+                        <i class="fas fa-check"></i>
+                        <span>舒适长裤 (2-3条)</span>
+                    </div>
+                    <div class="packing-item">
+                        <i class="fas fa-check"></i>
+                        <span>轻薄羽绒服或抓绒外套</span>
+                    </div>
+                    
+                    <h3 class="font-bold text-red-600 mt-3">防护用品</h3>
+                    <div class="packing-item">
+                        <i class="fas fa-check"></i>
+                        <span>高倍数防晒霜 (SPF50以上)</span>
+                    </div>
+                    <div class="packing-item">
+                        <i class="fas fa-check"></i>
+                        <span>便携雨伞或雨衣</span>
+                    </div>
+                    <div class="packing-item">
+                        <i class="fas fa-check"></i>
+                        <span>个人药品 (感冒药、肠胃药)</span>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <h3 class="font-bold text-red-600">预算参考 (人均)</h3>
+                    <table class="constructivism-table">
+                        <tr>
+                            <th>费用类型</th>
+                            <th>经济型</th>
+                            <th>舒适型</th>
+                        </tr>
+                        <tr>
+                            <td>交通费用</td>
+                            <td>¥800-1000</td>
+                            <td>¥1200-1500</td>
+                        </tr>
+                        <tr>
+                            <td>住宿费用</td>
+                            <td>¥600-900</td>
+                            <td>¥1000-1800</td>
+                        </tr>
+                        <tr>
+                            <td>餐饮费用</td>
+                            <td>¥400-600</td>
+                            <td>¥600-900</td>
+                        </tr>
+                        <tr>
+                            <td>总计</td>
+                            <td>¥2400-3500</td>
+                            <td>¥4100-6100</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- 联系信息区 -->
+            <div class="contact-info">
+                <h3 class="font-bold text-red-600">紧急联系信息</h3>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <div>旅游援助热线:</div>
+                    <div>0871-12301</div>
+                    <div>紧急求助:</div>
+                    <div>110(警察)/120(急救)</div>
+                    <div>云南旅游客运:</div>
+                    <div>0871-67161111</div>
+                </div>
+            </div>
+            
+            <a href="#" class="button-constructivism mt-6 block text-center">下载完整攻略</a>
+            
+            <!-- 底部设计 -->
+            <div class="mt-8 text-center text-xs text-gray-500">
+                <p>本攻略由高德地图数据支持</p>
+                <p>图片与文字版权归原作者所有</p>
+            </div>
+            <div class="footer-diagonal mt-4"></div>
+        </div>
+    </div>
+
+    <script>
+        // 导航到高德地图
+        function navigateToAmap(name, lat, lng) {
+            // 显示提示信息
+            const tooltip = document.getElementById('navTooltip');
+            tooltip.style.display = 'block';
+            tooltip.innerText = '正在打开高德地图...';
+            
+            // 构造高德地图通用URL
+            const amapUrl = `https://uri.amap.com/navigation?to=${lng},${lat},${encodeURIComponent(name)}&mode=car&src=yunnantravel`;
+            
+            // 尝试打开高德地图
+            location.href = amapUrl;
+            
+            // 给用户一些反馈
+            setTimeout(function() {
+                tooltip.innerText = '如未自动跳转，请手动下载安装高德地图';
+                setTimeout(function() {
+                    tooltip.style.display = 'none';
+                }, 3000);
+            }, 2000);
+        }
+
+        function switchTab(index) {
+            // 隐藏所有选项卡内容
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // 移除所有选项卡的活动状态
+            const tabs = document.querySelectorAll('.tab-container:first-of-type .tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // 显示选中的内容和激活选项卡
+            contents[index].classList.add('active');
+            tabs[index].classList.add('active');
+        }
+        
+        function switchAttractions(index) {
+            // 隐藏所有景点内容
+            const contents = document.querySelectorAll('.attractions-content');
+            contents.forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('active');
+            });
+            
+            // 移除所有选项卡的活动状态
+            const tabs = document.querySelectorAll('.tab-container:nth-of-type(2) .tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // 显示选中的内容和激活选项卡
+            contents[index].classList.remove('hidden');
+            contents[index].classList.add('active');
+            tabs[index].classList.add('active');
+        }
+        
+        function switchFood(index) {
+            // 隐藏所有美食内容
+            const contents = document.querySelectorAll('.food-content');
+            contents.forEach(content => {
+                content.classList.add('hidden');
+                content.classList.remove('active');
+            });
+            
+            // 移除所有选项卡的活动状态
+            const tabs = document.querySelectorAll('.tab-container:nth-of-type(3) .tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // 显示选中的内容和激活选项卡
+            contents[index].classList.remove('hidden');
+            contents[index].classList.add('active');
+            tabs[index].classList.add('active');
+        }
+    </script>
+</body>
+</html>
